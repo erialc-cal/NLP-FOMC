@@ -1,6 +1,13 @@
 
 
 #some import
+import os
+dir_name = os.path.dirname(__file__)
+
+
+project_directory = dir_name
+
+
 from gensim.parsing.preprocessing import STOPWORDS
 from nltk.corpus import stopwords
 
@@ -11,7 +18,7 @@ stop_words = stopwords.words('english')
 lemmatizer = WordNetLemmatizer() 
 
 
-project_directory = '/Users/etiennelenaour/Desktop/Stage/'
+# project_directory = '/Users/etiennelenaour/Desktop/Stage/'
 
 #l_month = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
@@ -132,7 +139,7 @@ for date in l_dates[1:]:
 
     intermed_list = list()
     final_list = list()
-ss
+
 
     for ele in flat_list:
         if IsWordToRemove(ele) or IsDate(ele) or OwnBracket(ele):

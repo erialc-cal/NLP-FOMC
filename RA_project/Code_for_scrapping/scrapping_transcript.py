@@ -1,8 +1,11 @@
 import  requests
 import pdftotext
+from update_scrapping import get_date_list
+import os
+dir_name = os.dirname(__file__)
+project_directory = dir_name
 
-
-project_directory = '/Users/etiennelenaour/Desktop/Stage/code_python/'
+#project_directory = '/Users/etiennelenaour/Desktop/Stage/code_python/'
 
 l_month = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
@@ -28,9 +31,11 @@ with open (project_directory+'csv_files/dates_fomc.csv', 'r') as doc :
             l_dates.append(date)
 
      
-date_to_append = [20120125, 20120312, 20120425, 20120620, 20120801, 20120913, 20121024, 20121212,
-20130130, 20130320, 20130501, 20130619, 20130918, 20131016, 20131030, 20131218,
-20140129, 20140304, 20140319, 20140430, 20140618, 20140630, 20140917, 20141029, 20141217]
+date_to_append = get_date_list(["2012","2013","2014","2015"])
+#[20120125, 20120312, 20120425, 20120620, 20120801, 20120913, 20121024, 20121212,
+#20130130, 20130320, 20130501, 20130619, 20130918, 20131016, 20131030, 20131218,
+#20140129, 20140304, 20140319, 20140430, 20140618, 20140630, 20140917, 20141029, 20141217]
+
 
 for date in date_to_append:
     l_dates.append(date)
