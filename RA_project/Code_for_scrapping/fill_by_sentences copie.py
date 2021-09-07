@@ -8,15 +8,21 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import datetime
+import os
+dir_name = os.path.dirname(__file__)
 
+
+project_directory = dir_name
 ##################
 #Global variables#
 ##################
 
 
-project_directory = '/Users/etiennelenaour/Desktop/Stage/'
 l_month = ['January','February','March','April','May','June','July','August','September','October','November','December']
-l_dates = list()
+
+with open(project_directory+'/transcript_files_txt/scrapped_dates.txt', 'r') as f:
+    l_dates = f.read().splitlines()
+
 
 ##################
 #functions########
@@ -184,7 +190,7 @@ def from_int_dates(integ):
     
     
     
-def RemoveBadCarac(mot):
+def RemoveBadCarac2(mot):
     """
     remove a list of bad carac in a word
     """
@@ -284,7 +290,7 @@ def plot_speak(liste, date):
 
     plt.legend()
     
-    plt.savefig(project_directory + 'image_chair_temp/' + 'chair_tempo_' + str(date) + '.png')
+    plt.savefig(project_directory + '/image_chair_temp/' + 'chair_tempo_' + str(date) + '.png')
     plt.close()
 
 
@@ -307,34 +313,34 @@ def plot_speak(liste, date):
 #Date#############
 ##################
 
-with open ('/Users/etiennelenaour/Desktop/Stage/csv_files/dates_fomc.csv', 'r') as doc :
-    head = doc.readline()
-    dates = doc.readlines()
-    dates_to_chg = []
-    for line in dates :
-        if line.split(',')[1] == ' Y' :
-            dates_to_chg += [line.split(';')[0]]
-            date = 0
-            m = 1   
-            for month in l_month :
-                if month[:3] == line.split(';')[0].split('/')[0] :
-                    date += 100 * m
-                m += 1
-            date += int(line.split(',')[0].split('/')[2])*10000
-            date += int(line.split(',')[0].split('/')[1])
-            l_dates.append(date)
+# with open ('/Users/etiennelenaour/Desktop/Stage/csv_files/dates_fomc.csv', 'r') as doc :
+#     head = doc.readline()
+#     dates = doc.readlines()
+#     dates_to_chg = []
+#     for line in dates :
+#         if line.split(',')[1] == ' Y' :
+#             dates_to_chg += [line.split(';')[0]]
+#             date = 0
+#             m = 1   
+#             for month in l_month :
+#                 if month[:3] == line.split(';')[0].split('/')[0] :
+#                     date += 100 * m
+#                 m += 1
+#             date += int(line.split(',')[0].split('/')[2])*10000
+#             date += int(line.split(',')[0].split('/')[1])
+#             l_dates.append(date)
             
 
+# l_dates_final = l_dates
+
+# date_to_append = [20120125, 20120425, 20120620, 20120801, 20120913, 20121024, 20121212, 20130130,
+# 20130130, 20130320, 20130501, 20130619, 20130918, 20131030, 20131218, 20140129,
+# 20140129, 20140319, 20140430, 20140618, 20140917, 20141029, 20141217]
+
+# for date in date_to_append:
+#     l_dates_final.append(date)
+
 l_dates_final = l_dates
-
-date_to_append = [20120125, 20120425, 20120620, 20120801, 20120913, 20121024, 20121212, 20130130,
-20130130, 20130320, 20130501, 20130619, 20130918, 20131030, 20131218, 20140129,
-20140129, 20140319, 20140430, 20140618, 20140917, 20141029, 20141217]
-
-for date in date_to_append:
-    l_dates_final.append(date)
-
-
 
 ##################
 #Main#############
@@ -350,15 +356,17 @@ liste_statement = list()
 
 for date in l_dates_final[1:]:
 
-    with open (project_directory+'transcript_short_version_txt/'+str(date)+'clean_meeting.txt', 'r') as doc:
-
-        content = doc.readlines()[0]
-        content_bis = content.split("\\n")
-
-        new_string = "".join(content_bis)
+    with open (project_directory+'/transcript_files_txt/'+str(date)+'meeting.txt', 'r') as doc:
+        
+        content = [str(ele.split(' ')[0]) for ele in doc.read().splitlines()]
+        #content = doc.readlines()[0]
+        
+        #content_bis = content.split("\n")
+   
+        new_string = " ".join(content)
         liste_word = new_string.split(" ")
 
-        bad_carac = [",", "*", "'", "]", "[", "-", " ", '', "(", ")", "//", ".", '-', '$', '€', "/", ";"]
+        bad_carac = [",", "*", "'", "]", "[", "-", " ", '', "(", ")", "//", ".", '-', '$', '€', "/", ";", "Š", "™", "."]
 
         good_liste = list()
 
@@ -383,7 +391,7 @@ for date in l_dates_final[1:]:
 
 
 df_statement_size = pd.concat(df_statement_size_list)
-path_to_save = project_directory + "csv_files/" + "df_statement_real.csv"
+path_to_save = project_directory + "/df_statement_real.csv"
 df_statement_size.set_index("Date").to_csv(path_to_save)
 
 
