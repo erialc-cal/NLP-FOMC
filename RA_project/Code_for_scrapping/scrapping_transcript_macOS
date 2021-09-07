@@ -9,7 +9,7 @@ Transcripts scrapping that works also on MacOS and Linux distributions.
 
 import  requests
 from PyPDF2 import PdfFileReader
-from PyPDF2 import PdfFileWriter 
+#from PyPDF2 import PdfFileWriter 
 from update_scrapping import get_date_list
 import os
 from tqdm import trange
@@ -22,13 +22,18 @@ l_month = ['January','February','March','April','May','June','July','August','Se
 
 l_dates = list()
 
-date_to_append = get_date_list(["2012","2013","2014","2015"])
+date_to_append = get_date_list(["2012","2013","2014","2015"]) 
+# uncomment to get updated list of files
+
+
 #[20120125, 20120312, 20120425, 20120620, 20120801, 20120913, 20121024, 20121212,
-#20130130, 20130320, 20130501, 20130619, 20130918, 20131016, 20131030, 20131218,
-#20140129, 20140304, 20140319, 20140430, 20140618, 20140630, 20140917, 20141029, 20141217]
-
+#20130130, 20130619, 20130918, 20131030, 20131218, 20140129, 20140304,20140319, 20140430, 20140618, 
+# date_to_append=[ 20140730, 20140917, 
+#  20141029, 20141217, 20150128, 20150318, 20150429, 20150617, 20150729,
+#  20150917, 20151028, 20151216]
+# 
 #%%
-
+problem_date = []
 for date in date_to_append:
     l_dates.append(date)
 #Scrappage des données par date
@@ -41,23 +46,33 @@ for date in l_dates:
         code.write(r.content)
         
     pdf_file = open(project_directory+'/transcript_files_pdf/'+str(date)+'meeting.pdf', 'rb')
-    
-    pdfReader = PyPDF2.PdfFileReader(pdf_file)
-    count = pdfReader.numPages
-    output = []
-    for i in trange(count):
-        page = pdfReader.getPage(i)
-        output += page.extractText()
-    
-    txtfile = open(project_directory+'/transcript_files_txt/'+str(date)+"meeting.txt","a")
-    txtfile.writelines(output)
-    
+    try :
+        pdfReader = PdfFileReader(pdf_file)
+        count = pdfReader.numPages
+        output = []
+        for i in trange(count):
+            page = pdfReader.getPage(i)
+            output += page.extractText()
+        
+        txtfile = open(project_directory+'/transcript_files_txt/'+str(date)+"meeting.txt","a")
+        txtfile.writelines(output)
+    except:
+        problem_date.append(date)
 
     
 
 
 
+#%% Storing problematic dates
 
+txtfile = open(project_directory+'/transcript_files_txt/problematic_dates.txt', 'a')
+for elem in problem_date:
+    txtfile.writelines("\n"+elem)
 
+#%% Storing non problematic dates
 
+txtfile = open(project_directory+'/transcript_files_txt/scrapped_dates.txt', 'a')
+for elem in l_dates:
+    if elem not in problem_date:
+        txtfile.writelines("\n"+elem)
 
