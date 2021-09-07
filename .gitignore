@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 RA_project/final_df_v4.csv
 .DS_Store
+RA_project/.DS_Store
