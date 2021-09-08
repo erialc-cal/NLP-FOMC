@@ -15,7 +15,7 @@ dir_name = os.path.dirname(__file__)
 
 project_directory = dir_name
 
-from update_scrapping import get_date_list
+
 from gensim.parsing.preprocessing import STOPWORDS
 
 import nltk
@@ -23,7 +23,7 @@ nltk.data.path.append('nltk_data')
 from nltk.corpus import stopwords
 
 from nltk.stem import WordNetLemmatizer 
-import re
+
 
 stop_words = stopwords.words('english')
 lemmatizer = WordNetLemmatizer() 
@@ -33,8 +33,8 @@ lemmatizer = WordNetLemmatizer()
 
 #l_month = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
-with open(project_directory+'/transcript_files_txt/scrapped_dates.txt', 'r') as f:
-    l_dates = f.read().splitlines()
+# with open(project_directory+'/transcript_files_txt/scrapped_dates.txt', 'r') as f:
+#     l_dates = f.read().splitlines()
 
 
 def IsWordToRemove(word):
@@ -127,56 +127,56 @@ with open ('/Users/etiennelenaour/Desktop/Stage/csv_files/dates_fomc.csv', 'r') 
             l_dates.append(date)
 """
 
-
-
-for date in l_dates[1:]:
-
-    with open (project_directory+'/transcript_files_txt/'+str(date)+'meeting.txt', 'r') as doc:
+def convert_transcript_wordset(l_dates):
+    
+    for date in l_dates[1:]:
+    
+        with open (project_directory+'/transcript_files_txt/'+str(date)+'meeting.txt', 'r') as doc:
+                
+            list_word = [str(ele.split(' ')[0]) for ele in doc.read().splitlines()]
             
-        list_word = [str(ele.split(' ')[0]) for ele in doc.read().splitlines()]
-        
-      #  list_word = re.sub('Š','', str(list_word))
-      #  list_word = re.sub(r'[^\w\s]','', str(list_word))
-        
-        # flat_list = list()
-        # for sublist in list_word:
-        #     for item in sublist:
-        #         flat_list.append(item)
-        
-    
-    
-    word_to_remove =  ["unintelligible", "speaker", "mr", "im", ":", "of", "wouldnt", "didnt", "doesnt",\
-     "dont", "id", "im", "ive", "okay", "thats", "weve", "worker", "wouldnt", "yield", "youre", "theyre", "whats"]
-    
-    
-    intermed_list = list()
-    final_list = list()
-    
-    
-    for ele in list_word:
-        if IsWordToRemove(ele) or IsDate(ele) or OwnBracket(ele):
-            pass
-        else:
-            ele_to_add = ele.lower().replace(' ', '')
-            intermed_list.append(RemoveBadCarac(ele_to_add))
-    
-    
-    
-    for ele in intermed_list:
-        if (ele not in STOPWORDS) and (ele not in stop_words) and (ele not in word_to_remove):
-            final_list.append(ele)
-        else:
-            pass
+          #  list_word = re.sub('Š','', str(list_word))
+          #  list_word = re.sub(r'[^\w\s]','', str(list_word))
             
-    final_list = list(filter(None, final_list))
+            # flat_list = list()
+            # for sublist in list_word:
+            #     for item in sublist:
+            #         flat_list.append(item)
+            
+        
+        
+        word_to_remove =  ["unintelligible", "speaker", "mr", "im", ":", "of", "wouldnt", "didnt", "doesnt",\
+         "dont", "id", "im", "ive", "okay", "thats", "weve", "worker", "wouldnt", "yield", "youre", "theyre", "whats"]
+        
+        
+        intermed_list = list()
+        final_list = list()
+        
+        
+        for ele in list_word:
+            if IsWordToRemove(ele) or IsDate(ele) or OwnBracket(ele):
+                pass
+            else:
+                ele_to_add = ele.lower().replace(' ', '')
+                intermed_list.append(RemoveBadCarac(ele_to_add))
+        
+        
+        
+        for ele in intermed_list:
+            if (ele not in STOPWORDS) and (ele not in stop_words) and (ele not in word_to_remove):
+                final_list.append(ele)
+            else:
+                pass
+                
+        final_list = list(filter(None, final_list))
+        
+        lemmatize_list = [lemmatizer.lemmatize(ele) for ele in final_list]
+        
     
-    lemmatize_list = [lemmatizer.lemmatize(ele) for ele in final_list]
     
-
-
-    with open(project_directory+'/transcript_to_word_set/'+str(date)+'meeting.txt', 'w') as sortie:
-        sortie.write(" ".join(lemmatize_list))
-        sortie.close
+        with open(project_directory+'/transcript_to_word_set/'+str(date)+'meeting.txt', 'w') as sortie:
+            sortie.write(" ".join(lemmatize_list))
+            sortie.close
 
 #%%
 

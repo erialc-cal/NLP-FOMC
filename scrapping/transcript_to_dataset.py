@@ -18,10 +18,6 @@ project_directory = dir_name
 ##################
 
 
-l_month = ['January','February','March','April','May','June','July','August','September','October','November','December']
-
-with open(project_directory+'/transcript_files_txt/scrapped_dates.txt', 'r') as f:
-    l_dates = f.read().splitlines()
 
 
 ##################
@@ -339,62 +335,62 @@ def plot_speak(liste, date):
 
 # for date in date_to_append:
 #     l_dates_final.append(date)
-
-l_dates_final = l_dates
-
-##################
-#Main#############
-##################
-
-
-df_statement_size_list = list()
-liste_chair_in_charge = list()
-liste_statement = list()
-
-
-
-
-for date in l_dates_final[1:]:
-
-    with open (project_directory+'/transcript_files_txt/'+str(date)+'meeting.txt', 'r') as doc:
-        
-        content = [str(ele.split(' ')[0]) for ele in doc.read().splitlines()]
-        #content = doc.readlines()[0]
-        
-        #content_bis = content.split("\n")
-   
-        new_string = " ".join(content)
-        liste_word = new_string.split(" ")
-
-        bad_carac = [",", "*", "'", "]", "[", "-", " ", '', "(", ")", "//", ".", '-', '$', '€', "/", ";", "Š", "™", "."]
-
-        good_liste = list()
-
-        for ele in liste_word:
+def main_dataframe_constructor(l_dates):
+    l_dates_final = l_dates
+    
+    ##################
+    #Main#############
+    ##################
+    
+    
+    df_statement_size_list = list()
+    liste_chair_in_charge = list()
+    liste_statement = list()
+    
+    
+    
+    
+    for date in l_dates_final[1:]:
+    
+        with open (project_directory+'/transcript_files_txt/'+str(date)+'meeting.txt', 'r') as doc:
             
-            word = list()
+            content = [str(ele.split(' ')[0]) for ele in doc.read().splitlines()]
+            #content = doc.readlines()[0]
             
-            for carac in ele:
-                if carac not in bad_carac:
-                    word.append(carac)
-                else:
-                    pass
+            #content_bis = content.split("\n")
+       
+            new_string = " ".join(content)
+            liste_word = new_string.split(" ")
+    
+            bad_carac = [",", "*", "'", "]", "[", "-", " ", '', "(", ")", "//", ".", '-', '$', '€', "/", ";", "Š", "™", "."]
+    
+            good_liste = list()
+    
+            for ele in liste_word:
                 
-            good_liste.append("".join(word))
-            
-        filter_list = list(filter(None, good_liste))
-
-        useless, liste_finale, liste_statement = get_sentences_by_name(filter_list) 
-
-        df_statement_size_list.append(from_liste_to_df(liste_finale, date, liste_statement))
-
-
-
-df_statement_size = pd.concat(df_statement_size_list)
-path_to_save = project_directory + "/df_statement_real.csv"
-df_statement_size.set_index("Date").to_csv(path_to_save)
-
-
+                word = list()
+                
+                for carac in ele:
+                    if carac not in bad_carac:
+                        word.append(carac)
+                    else:
+                        pass
+                    
+                good_liste.append("".join(word))
+                
+            filter_list = list(filter(None, good_liste))
+    
+            useless, liste_finale, liste_statement = get_sentences_by_name(filter_list) 
+    
+            df_statement_size_list.append(from_liste_to_df(liste_finale, date, liste_statement))
+    
+    
+    
+    df_statement_size = pd.concat(df_statement_size_list)
+    path_to_save = project_directory + "/df_statement_real.csv"
+    df_statement_size.set_index("Date").to_csv(path_to_save)
+    
+    
 
 
 """
