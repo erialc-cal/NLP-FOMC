@@ -92,6 +92,7 @@ def plot_top_words(model, feature_names, n_top_words, title):
 
 
 
+
 # Use tf-idf features for NMF.
 print("Extracting tf-idf features for NMF...")
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2,
