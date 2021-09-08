@@ -4,6 +4,10 @@
 Created on Wed Sep  8 12:28:04 2021
 
 @author: Claire HE
+
+Script file : comparing topics modelling with three methods : LDA, NMF with Frobenius norm and with Kullback Leibler divergence. 
+Full statements are used in dictionary for modelling. 
+Code is inspired from the following scikit-learn documentation : https://scikit-learn.org/stable/auto_examples/applications/plot_topics_extraction_with_nmf_lda.html#sphx-glr-auto-examples-applications-plot-topics-extraction-with-nmf-lda-py 
 """
 
 from time import time
@@ -14,10 +18,13 @@ from sklearn.decomposition import NMF, LatentDirichletAllocation
 
 #%%
 
+############ DATA PREPROCESSING ###################
+
 #nltk.download('stopwords')
 from nltk.corpus import stopwords
 stop = stopwords.words('english')
-stop.extend(['mr','re', 's', 'it', 'ex', 'in', 'he', 'and', 'there', 'however', 'to', 'now', 'to', 'of', 'the', 'they', 'but', 'soon', 'film', 'that', 'who', 'of'])
+stop.extend(['mr','re', 's', 'it', 'ex', 'in', 'he', 'and', 'there', 'however', 'to', 'now', 'to', 'of', 'the', 
+             'they', 'but', 'soon', 'film', 'that', 'who', 'of', 'oh','youre','like','dont', 'yes', 'thats', 'im', 'think', 'thank'])
 
 
 df = pd.read_csv("/Users/h2jw/Documents/GitHub/NLP-FOMC/RA_project/final_df_v4.csv", low_memory=True)
@@ -31,9 +38,9 @@ df['statement'] = df['statement'].apply(lambda x: [item for item in x if item no
 df.statement = df.statement.astype('string')
 df['statement'] = df['statement'].str.replace('[^\w\s]','')
 
-n_samples = 2000
+n_samples = len(df.statement) #2000
 n_features = 1000
-n_components = 5
+n_components = 10
 n_top_words = 10
 
 
@@ -53,6 +60,9 @@ n_top_words = 10
 data = df.statement.dropna().to_list()
 data_samples = data[:n_samples]
 #%% 
+
+
+############### ANALYSIS #################@
 def plot_top_words(model, feature_names, n_top_words, title):
     a, b = n_components//5, n_components%5
     fig, axes = plt.subplots(a, 5, figsize=(20, 8), sharex=True)
@@ -72,9 +82,10 @@ def plot_top_words(model, feature_names, n_top_words, title):
             ax.spines[i].set_visible(False)
         fig.suptitle(title, fontsize=40)
 
-    keywords = ['Frobenius', 'Kullback-Leibler','LDA']
-    for word in title:
+    keywords = ['frobenius', 'kl','lda']
+    for word in title.lower().split():
         if word in keywords:
+        
             plt.subplots_adjust(top=0.90, bottom=0.05, wspace=0.90, hspace=0.3)
             plt.savefig(f'{word}_{n_components}.png')
             plt.show()
@@ -112,7 +123,7 @@ print("done in %0.3fs." % (time() - t0))
 
 tfidf_feature_names = tfidf_vectorizer.get_feature_names()
 plot_top_words(nmf, tfidf_feature_names, n_top_words,
-               'Topics in NMF model (Frobenius norm)')
+               'Topics in NMF model Frobenius norm' )
 
 # Fit the NMF model
 print('\n' * 2, "Fitting the NMF model (generalized Kullback-Leibler "
@@ -126,7 +137,7 @@ print("done in %0.3fs." % (time() - t0))
 
 tfidf_feature_names = tfidf_vectorizer.get_feature_names()
 plot_top_words(nmf, tfidf_feature_names, n_top_words,
-               'Topics in NMF model (generalized Kullback-Leibler divergence)')
+               'Topics in NMF model generalized KL divergence')
 
 
 print('\n' * 2, "Fitting LDA models with tf features, "
