@@ -78,7 +78,8 @@ def LDA_topics(data, n_samples, n_components, n_features, n_top_words):
         top_features.append([tf_feature_names[i] for i in top_features_ind])
         weights.append(topic[top_features_ind])
     return top_features, weights
-#%% #########
+
+#%% ######### MODELING AND SAVING DATA
 
 if run_script:
     top_features, weights = LDA_topics(data, n_samples, n_components, n_features, n_top_words)
@@ -98,3 +99,15 @@ if saveFlag :
     df_topics['weights']=w
     df_topics['topic']= np.repeat([i+1 for i in range(n_components)], n_top_words)
     df_topics.to_csv(f'df_{n_components}_topics_{n_top_words}_topwords.csv')
+    
+    
+#%% ######### CHAIR ANALYSIS WITH LDA TOPICS
+
+
+
+# topic appearance ratio for all statements of a chair
+
+
+
+
+
