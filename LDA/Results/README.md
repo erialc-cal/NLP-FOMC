@@ -9,6 +9,8 @@ We chose to keep either 5 or 10 topics.
 
 
 **Extracting time**
+
+
 For a full dictionary (12678 statements):
 - NMF Frobenius : 19.231s
 - NMF Kullback Leibler : 71.219s
