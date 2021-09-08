@@ -31,7 +31,7 @@ import datetime as dt
 ######################### PARTIE A MODIFIER PAR L'UTILISATEUR #########################
 
 
-scrapping_start_year = 2012
+scrapping_start_year = 2014
 
 
 
