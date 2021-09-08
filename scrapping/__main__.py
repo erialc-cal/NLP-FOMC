@@ -5,6 +5,15 @@ Created on Wed Sep  8 11:01:03 2021
 
 @author: Claire He
 Main file
+
+Le code suivant permet de scrapper tous les transcripts de la FOMC à partir de la date renseignée par 
+L'utilisateur dans 'scrapping_start_year', les transcripts étant mis à disposition tous les 5 ans. Il suffit d'exécuter ce code pour avoir :
+1. Dans le dossier 'transcript_files_pdf' la version pdf des transcripts (officielle)
+2. Dans le dossier 'transcript_files_txt' la version convertie en txt des transcripts
+3. Dans le dossier 'transcript_to_word_set' la version "bag of words" des transcripts après nettoyage et lemmatization. 
+4. Dans le dossier parent, le dataset mis à jour. 
+
+
 """
 import os
 dir_name = os.path.dirname(__file__)
@@ -17,7 +26,18 @@ from transcript_to_dataset import main_dataframe_constructor
 import datetime as dt 
 
 
+
+#######################################################################################
+######################### PARTIE A MODIFIER PAR L'UTILISATEUR #########################
+
+
 scrapping_start_year = 2012
+
+
+
+#######################################################################################
+######################### PARTIE A MODIFIER PAR L'UTILISATEUR #########################
+
 
 year_l = [str(i) for i in range(scrapping_start_year, dt.datetime.now().year-5)] 
 # actualise la liste d'années à partir de scrapping start year
