@@ -108,17 +108,21 @@ if saveFlag :
 
 # topic appearance ratio for all statements of a chair
 
-def plot_topic_per_chair(data, all_topic, topic, chair, verbose=False):
+def plot_topic_per_chair(data, all_topic, topic, chair, verbose=False, n_components=5, n_top_words=10):
     #sélection de la chair
     mask = data[data.chair_in_charge==chair].index
     select_topic = all_topic[mask]
+    top_features_ind = select_topic.argsort()[:-n_top_words - 1:-1]
+   # weights = select_topic[top_features_ind]
+
+    print(select_topic,top_features_ind, np.sum(select_topic, axis=0))
     if verbose : 
-        a, b = len(topic)//5, len(topic)%5
+        a = len(topic)//5
         fig, axes = plt.subplots(a, 5, figsize=(20, 8), sharex=True)
         axes = axes.flatten()
         for i in range(len(topic)):
             ax = axes[i]
-            ax.barh(topic[i], select_topic[i], height=0.7)
+            ax.barh(topic[i], select_topic[topic[i]], height=0.7)
             ax.set_title(f'Topic {i +1}',
                          fontdict={'fontsize': 30})
             ax.invert_yaxis()
@@ -128,18 +132,37 @@ def plot_topic_per_chair(data, all_topic, topic, chair, verbose=False):
             fig.suptitle(f"Top 10 topics for the {chair}", fontsize=40)
     return select_topic
  
-    
+def plot_topic_ratio(data, all_topic, topic, n_components=5, n_top_words=10):
+    count_topic = []
+    topic_num = [i for i in range(n_components)]
+    chair_l = pd.unique(data.chair_in_charge)
+    for chair in chair_l:
+        mask = data[data.chair_in_charge==chair].index
+        select_topic = all_topic[mask]
+        count_topic.append(np.mean(select_topic, axis=0))
+    #print(count_topic)
+    fig, ax = plt.subplots(1, len(chair_l),figsize=(20,5))
+    for i in range(len(chair_l)):
+        ax[i].bar(topic_num, count_topic[i])
+        ax[i].set_xlabel('Topic no.')
+        ax[i].set_title(f'{chair_l[i]}')
+    plt.show()
 
 #%%
+
+plot_topic_ratio(df, doc_topic, top_features)
 
 # df_per_chair['chair_in_charge']= np.repeat(chair, len(topic))
 # df_per_chair['topic']= np.tile([i for i in range(len(topic))], len(chair))
 # df_per_chair['ratio']=ratio1       
 
+        # top_features_ind = topic.argsort()[:-n_top_words - 1:-1]
+        # top_features = [feature_names[i] for i in top_features_ind]
+        # weights = topic[top_features_ind]
 
 #%%
-for chair in pd.unique(df.chair_in_charge):
-    plot_topic_per_chair(df, doc_topic, top_features, chair, verbose=True)
+# for chair in pd.unique(df.chair_in_charge):
+#     select_topic= plot_topic_per_chair(df, doc_topic, top_features, chair, verbose=True)
 
 
 
