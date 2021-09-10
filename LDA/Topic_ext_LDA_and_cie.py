@@ -40,7 +40,7 @@ df['statement'] = df['statement'].str.replace('[^\w\s]','')
 
 n_samples = len(df.statement) #2000
 n_features = 1000
-n_components = 10
+n_components = 5
 n_top_words = 10
 
 
