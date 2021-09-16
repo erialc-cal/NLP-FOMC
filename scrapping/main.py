@@ -31,7 +31,8 @@ import datetime as dt
 
 
 scrapping_start_year = 2015
-
+skip_scrapping = True #set to True if you already scrapped the data in the folder
+skip_wordset = True #set to True if you want to skip cleaning the data into wordset
 
 
 #######################################################################################
@@ -44,24 +45,28 @@ year_l = [str(i) for i in range(scrapping_start_year, dt.datetime.now().year-5)]
 date_list = get_date_list(year_l)
 
 
+if not skip_scrapping:
+    ### SCRAPPING
+    print('----SCRAPPING IN PROGRESS--------------')
+    try :
+        os.mkdir(dir_name+'/transcript_files_pdf/')
+        os.mkdir(dir_name+'/transcript_files_txt/')
+    except:
+        pass
+    date_list = scrapping_transcript(date_list) # update to successful scrapped dates
 
-### SCRAPPING
-try :
-    os.mkdir(dir_name+'/transcript_files_pdf/')
-    os.mkdir(dir_name+'/transcript_files_txt/')
-except:
-    pass
-date_new = scrapping_transcript(date_list) # successful scrapped dates
-
-### CLEANING
-try :
-    os.mkdir(dir_name+'/transcript_to_word_set/')
-except: 
-    pass
-convert_transcript_wordset(date_new) # creates wordset
+if not skip_wordset:
+    ### CLEANING
+    print('----CLEANING IN PROGRESS--------------')
+    try :
+        os.mkdir(dir_name+'/transcript_to_word_set/')
+    except: 
+        pass
+    convert_transcript_wordset(date_list) # creates wordset
 
 ### CREATING DATASET
-main_dataframe_constructor2(date_new)
+print('----CLEANING IN PROGRESS AND CREATING DATASET--------------')
+main_dataframe_constructor2(date_list)
 
 
-
+print('DATASET hAS BEEN CREATED.')

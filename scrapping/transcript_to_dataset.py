@@ -77,7 +77,7 @@ def get_names(statements):
     list_names = list()
     names_position = list()
 
-    list_prefixe = ['CHAIRMAN', 'MR', 'MS', 'VICE CHAIRMAN', 'CHAIR']
+    list_prefixe = ['CHAIRMAN', 'MR.', 'MS.', 'VICE CHAIRMAN', 'CHAIR', 'MR', 'MS']
 
 
     for ii in range(len(statements)):
@@ -334,13 +334,14 @@ def find_meeting_start(lines_cleaned):
     """ function that searches for the start of the meeting
     returns the raw position of the document seen as a string, to use after clean_text_before_search """
     
-    start_pos = 0
+    start_pos, start = 0, 0
     pattern='Transcript of the Federal Open Market Committee Meeting'
     if re.search(pattern, lines_cleaned):
         print('found a match !')
         start_pos = re.search(pattern, lines_cleaned).span()[1]
     pattern2 = 'Session'
-    start = re.search(pattern2, lines_cleaned[start_pos:]).span()[1]
+    if re.search(pattern2, lines_cleaned[start_pos:]):
+        start = re.search(pattern2, lines_cleaned[start_pos:]).span()[1]
     return start_pos+start+1
 
 
@@ -511,7 +512,7 @@ def main_dataframe_constructor2(l_dates):
         # opening file
         file1 = open (project_directory+'/transcript_files_txt/'+str(date)+'meeting.txt', 'r')
         # cleaning file
-        lines_cleaned = check_broken_words(clean_text_before_search(file1))
+        lines_cleaned = clean_text_before_search(file1)
         
         # getting the statements (ignoring introduction of participants etc.)
         start = find_meeting_start(lines_cleaned)
