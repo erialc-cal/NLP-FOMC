@@ -9,10 +9,14 @@ import seaborn as sns
 import pandas as pd
 import datetime
 import os
+from tqdm import trange
+import re
 dir_name = os.path.dirname(__file__)
 
 
 project_directory = dir_name
+
+#%%
 ##################
 #Global variables#
 ##################
@@ -49,10 +53,12 @@ def RemoveBadCarac(mot):
     """
     remove a list of bad carac in a word
     """
-    bad_carac = [",", "*", "'", "]", "[", "-", "!", "?", " ", '', "(", ")", "//", ".", '-', '\\n', '$', '€']
+    bad_carac = [",", "*", "'", "]", "[", "-", " ", 
+                 '', "(", ")", "//", '-', '\\n', 
+                 'Š','Œ','™','ﬁ','ﬂ','í' ]
     mot_propre = list()
     for carac in mot:
-        if carac not in bad_carac and not carac.isnumeric():
+        if carac not in bad_carac: #and not carac.isnumeric():
             mot_propre.append(carac)
         else:
             mot_propre.append("")
@@ -304,38 +310,86 @@ def plot_speak(liste, date):
 
 
 
+#%% TESTS
 
-##################
-#Date#############
-##################
-
-# with open ('/Users/etiennelenaour/Desktop/Stage/csv_files/dates_fomc.csv', 'r') as doc :
-#     head = doc.readline()
-#     dates = doc.readlines()
-#     dates_to_chg = []
-#     for line in dates :
-#         if line.split(',')[1] == ' Y' :
-#             dates_to_chg += [line.split(';')[0]]
-#             date = 0
-#             m = 1   
-#             for month in l_month :
-#                 if month[:3] == line.split(';')[0].split('/')[0] :
-#                     date += 100 * m
-#                 m += 1
-#             date += int(line.split(',')[0].split('/')[2])*10000
-#             date += int(line.split(',')[0].split('/')[1])
-#             l_dates.append(date)
+date = '20140730'
+file1 = open(project_directory+'/transcript_files_txt/'+str(date)+'meeting.txt', 'r')
+def clean_text_before_search(file1):
+    lines = file1.readlines()
+    lines_cleaned=""
+    
+    
+    for i in trange(len(lines)):
+        line = lines[i]
+        line_s = ""
+        for word in line.split() : 
+            word = RemoveBadCarac(word)
+            line_s += ' '+word
+        lines_cleaned+=line_s
+    return lines_cleaned
             
 
-# l_dates_final = l_dates
+            
+def find_meeting_start(lines_cleaned):
+    """ function that searches for the start of the meeting
+    returns the raw position of the document seen as a string, to use after clean_text_before_search """
+    
+    start_pos = 0
+    pattern='Transcript of the Federal Open Market Committee Meeting'
+    if re.search(pattern, lines_cleaned):
+        print('found a match !')
+        start_pos = re.search(pattern, lines_cleaned).span()[1]
+    pattern2 = 'Session'
+    start = re.search(pattern2, lines_cleaned[start_pos:]).span()[1]
+    return start_pos+start+1
 
-# date_to_append = [20120125, 20120425, 20120620, 20120801, 20120913, 20121024, 20121212, 20130130,
-# 20130130, 20130320, 20130501, 20130619, 20130918, 20131030, 20131218, 20140129,
-# 20140129, 20140319, 20140430, 20140618, 20140917, 20141029, 20141217]
 
-# for date in date_to_append:
-#     l_dates_final.append(date)
+
+def check_broken_words(cleaned_lines):
+    """
+    Méthode sommaire pour bricoler les mots tronqués par sauts de ligne ou autre dans la conversion pdf 
+    """
+    not_broken_words = ['a', 'i','im', 'if','it','s', 're','d','ll','ve', 'id','is', 'or','he','ex', 
+                        'be','in', 'at', 'to', 'ok', 'on', 'so', 'us', 'up', 'hi', 'by', 'b',
+                        'as','me', 'my', 'we','mr', 'ms', 'do', 'go', 'no', 'am', 'of', "an",'ct', 'oh']
+    
+    word_list = cleaned_lines.lower().split()
+    clean = ""
+    for i in trange(len(word_list)):
+        words = word_list[i]
+        if len(words)<=2 and words not in not_broken_words and words.isnumeric()== False:
+            #print(words, word_list[i+1], word_list[i-1])
+            n, m = len(word_list[i-1]), len(word_list[i+1])
+            if n < m:
+                clean+= word_list[i-1]+words+' '
+            else :
+                clean += words+word_list[i+1]+' '
+        else : 
+            clean+=words+' '
+    return clean
+
+#TEST
+
+# lines_c = clean_text_before_search(file1)
+
+
+# c = check_broken_words(lines_c)
+
+
 def main_dataframe_constructor(l_dates):
+    """
+    Deprecated, use main_dataframe_constructor2
+
+    Parameters
+    ----------
+    l_dates : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
     l_dates_final = l_dates
     
     ##################
@@ -344,7 +398,7 @@ def main_dataframe_constructor(l_dates):
     
     
     df_statement_size_list = list()
-    liste_chair_in_charge = list()
+   # liste_chair_in_charge = list()
     liste_statement = list()
     
     
@@ -383,6 +437,90 @@ def main_dataframe_constructor(l_dates):
             useless, liste_finale, liste_statement = get_sentences_by_name(filter_list) 
     
             df_statement_size_list.append(from_liste_to_df(liste_finale, date, liste_statement))
+    
+    
+    
+    df_statement_size = pd.concat(df_statement_size_list)
+    path_to_save = project_directory + "/df_statement_real.csv"
+    df_statement_size.set_index("Date").to_csv(path_to_save)
+    
+
+
+
+#%%
+
+
+##################
+#Date#############
+##################
+
+# with open ('/Users/etiennelenaour/Desktop/Stage/csv_files/dates_fomc.csv', 'r') as doc :
+#     head = doc.readline()
+#     dates = doc.readlines()
+#     dates_to_chg = []
+#     for line in dates :
+#         if line.split(',')[1] == ' Y' :
+#             dates_to_chg += [line.split(';')[0]]
+#             date = 0
+#             m = 1   
+#             for month in l_month :
+#                 if month[:3] == line.split(';')[0].split('/')[0] :
+#                     date += 100 * m
+#                 m += 1
+#             date += int(line.split(',')[0].split('/')[2])*10000
+#             date += int(line.split(',')[0].split('/')[1])
+#             l_dates.append(date)
+            
+
+# l_dates_final = l_dates
+
+# date_to_append = [20120125, 20120425, 20120620, 20120801, 20120913, 20121024, 20121212, 20130130,
+# 20130130, 20130320, 20130501, 20130619, 20130918, 20131030, 20131218, 20140129,
+# 20140129, 20140319, 20140430, 20140618, 20140917, 20141029, 20141217]
+
+# for date in date_to_append:
+#     l_dates_final.append(date)
+def main_dataframe_constructor2(l_dates):
+    """
+    Crreates updated dataframe with transcript statement, statement size, statement size, chair in charge and interlocutor's name
+
+    Parameters
+    ----------
+    l_dates : list of dates for scrapping data
+
+    Returns
+    -------
+    None.
+
+    """
+    l_dates_final = l_dates
+    
+    ##################
+    #Main#############
+    ##################
+    
+    
+    df_statement_size_list = list()
+    #liste_chair_in_charge = list()
+    liste_statement = list()
+    
+    
+    
+    
+    for date in l_dates_final[1:]:
+        # opening file
+        file1 = open (project_directory+'/transcript_files_txt/'+str(date)+'meeting.txt', 'r')
+        # cleaning file
+        lines_cleaned = check_broken_words(clean_text_before_search(file1))
+        
+        # getting the statements (ignoring introduction of participants etc.)
+        start = find_meeting_start(lines_cleaned)
+        statements =lines_cleaned[start:].split()
+        
+        # creating the by name dictionary of each statement
+        dico_sentences_by_name, liste_finale, liste_statement = get_sentences_by_name(statements)
+
+        df_statement_size_list.append(from_liste_to_df(liste_finale, date, liste_statement))
     
     
     

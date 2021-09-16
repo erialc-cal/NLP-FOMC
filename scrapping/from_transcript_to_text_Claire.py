@@ -94,7 +94,7 @@ def RemoveBadCarac(mot):
     """
     remove a list of bad carac in a word
     """
-    bad_carac = [",", "*", "'", "]", "[", "-", ".", "!", "?", " ", '', "(", ")", "œ", "$", "™", "š"]
+    bad_carac = [",", "*", "'", "]", "[", "-", ".", "!", "?", " ", '', "(", ")", "œ", "$", "™", "š", "ﬁ"]
     mot_propre = list()
     for carac in mot:
         if carac not in bad_carac and not carac.isnumeric():
@@ -178,12 +178,12 @@ def convert_transcript_wordset(l_dates):
             sortie.write(" ".join(lemmatize_list))
             sortie.close
 
-#%%
+#%% TEST
 
 
 
 
-# with open (project_directory+'/transcript_files_txt/20141029meeting.txt', 'r') as doc:
+# with open (project_directory+'/transcript_files_txt/20140730meeting.txt', 'r') as doc:
     
 #     list_word = [str(ele.split(' ')[0]) for ele in doc.read().splitlines()]
     
@@ -198,7 +198,7 @@ def convert_transcript_wordset(l_dates):
 
 
 # word_to_remove =  ["unintelligible", "speaker", "mr", "im", ":", "of", "wouldnt", "didnt", "doesnt",\
-#  "dont", "id", "im", "ive", "okay", "thats", "weve", "worker", "wouldnt", "yield", "youre", "theyre", "whats"]
+#   "dont", "id", "im", "ive", "okay", "thats", "weve", "worker", "wouldnt", "yield", "youre", "theyre", "whats"]
 
 
 # intermed_list = list()

@@ -21,7 +21,7 @@ os.chdir(dir_name)
 from update_scrapping import get_date_list
 from scrapping_transcript_macOS import scrapping_transcript
 from from_transcript_to_text_Claire import convert_transcript_wordset
-from transcript_to_dataset import main_dataframe_constructor
+from transcript_to_dataset import main_dataframe_constructor2
 import datetime as dt 
 
 
@@ -30,7 +30,7 @@ import datetime as dt
 ######################### PARTIE A MODIFIER PAR L'UTILISATEUR #########################
 
 
-scrapping_start_year = 2014
+scrapping_start_year = 2015
 
 
 
@@ -61,7 +61,7 @@ except:
 convert_transcript_wordset(date_new) # creates wordset
 
 ### CREATING DATASET
-main_dataframe_constructor(date_new)
+main_dataframe_constructor2(date_new)
 
 
 
