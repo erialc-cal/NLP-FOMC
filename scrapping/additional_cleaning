@@ -10,7 +10,8 @@ Traitement de la base updatée
 
 import pandas as pd
 import numpy as np
-
+from tqdm import trange
+from transcript_to_dataset import IsWordInCapital
 file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/scrapping/df_statement_real.csv'
 
 df = pd.read_csv(file_path, low_memory=True)
@@ -23,17 +24,48 @@ df = pd.read_csv(file_path, low_memory=True)
 # with the case of VICE CHAIRMAN DUDLEY ??
 
 
+# check_broken_words is a non intelligent way to regroup broken strings by concatenating
+# single or double characters with its shortest neighbour 
+
+n=0
+example_list = df.statement.iloc[[n]][n]
 
 
+def check_broken_words(cleaned_lines, verbose=False):
+    """
+    Méthode sommaire pour bricoler les mots tronqués par sauts de ligne ou autre dans la conversion pdf 
+    """
+    not_broken_words = ['a', 'i','im', 'if','it','s', 're','d','ll','ve', 'id','is', 'or','he','ex', 
+                        'be','in', 'at', 'to', 'ok', 'on', 'so', 'us', 'up', 'hi', 'by', 'b',
+                        'as','me', 'my', 'we','mr', 'ms', 'do', 'go', 'no', 'am', 'of', "an",'ct', 'oh']
+    
+    word_list = cleaned_lines.lower().split()
+    clean = ""
+    for i in trange(len(word_list)-1):
+        words = word_list[i]
+        if len(words)<=2 and words not in not_broken_words and words.isnumeric()== False:
+            #print(words, word_list[i+1], word_list[i-1])
+            n, m = len(word_list[i-1]), len(word_list[i+1])
+            if n < m:
+                clean+= word_list[i-1]+words+' '
+                if verbose : print( word_list[i-1]+words+' ')
+            else :
+                clean += words+word_list[i+1]+' '
+                if verbose : print( words+word_list[i+1]+' ')
+        else : 
+            clean+=words+' '
+    return clean
 
 
+# Example of use :
+check_broken_words(example_list, verbose=True)
 
 
-
-
-
-
-
+# Subsisting capital letters
+statement = df.statement.iloc[[41]][41]
+for word in statement.split():
+    if IsWordInCapital(word):
+        print('error')
 
 
 
