@@ -111,40 +111,27 @@ negative_word_list = [ele.lower() for ele in df_sentiment.Negative.tolist()]
 positive_word_list = [ele.lower() for ele in remove_nan_from_list(df_sentiment.Positive.tolist())]
 
 def compute_positivity(dico):
-
-	dico_score = defaultdict(lambda: list())
-	
-
-	
-	for ii in range(10):
-
-		for name, liste in dico.items():
-
-			neg_score = 0
-			pos_score = 0
-
-			for ele in liste:
-
-				if ele in negative_word_list:
-					neg_score += 1
-
-				elif ele in positive_word_list:
-					pos_score += 1
-
-
-				else:
-					pass
-
-			
-			if neg_score < 30 or pos_score < 30:
-				pass
-
-			else:
-
-				score = (pos_score - neg_score) / (pos_score + neg_score)
-				dico_score[name] = score
-
-	return dico_score
+    """  This computes the positivity score of each statement. 
+    Takes a dictionary with each statement as liste item and the corresponding interlocutor's name in names item  
+    
+    """ 
+    dico_score = defaultdict(lambda: list())
+    for name, liste in dico.items():
+        neg_score = 0
+        pos_score = 0
+        for ele in liste:
+            if ele in negative_word_list:
+                neg_score += 1
+            elif ele in positive_word_list:
+                pos_score += 1
+            else:
+                pass
+        if neg_score < 30 or pos_score < 30:
+            pass
+        else:
+            score = (pos_score - neg_score) / (pos_score + neg_score)
+            dico_score[name] = score
+    return dico_score
 
 
 def compute_mean_positivity(dico):

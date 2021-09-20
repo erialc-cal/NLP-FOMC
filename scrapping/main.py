@@ -64,9 +64,22 @@ if not skip_wordset:
         pass
     convert_transcript_wordset(date_list) # creates wordset
 
+
+#%%
 ### CREATING DATASET
 print('----CLEANING IN PROGRESS AND CREATING DATASET--------------')
 main_dataframe_constructor2(date_list)
 
 
 print('DATASET hAS BEEN CREATED.')
+
+
+
+
+
+
+
+
+
+
+
