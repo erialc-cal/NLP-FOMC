@@ -42,7 +42,7 @@ plot_mean_scores_by_yearspan(df, 2015, 2015)
 ######################################################################################
 
 def plot_score_hawkish(df):
-    
+    plt.figure()
     sns.relplot(x='Date', y='score_hawkish', hue='chair_in_charge', data=df)
     plt.xticks(df.Date.dt.year,range(len(pd.unique(df.Date.dt.year))), rotation=90)
     plt.ylabel("Difference Hawkish Score")
@@ -55,7 +55,7 @@ def plot_score_hawkish(df):
 def plot_score_positivity_chair(df):
     plt.figure()
     sns.relplot(x='Date', y='score_posi', hue='chair_in_charge', data=df)
-    plt.xticks(df.Date.dt.year,range(len(pd.unique(df.Date.dt.year))), rotation=90)
+    plt.xticks(pd.unique(df.Date.dt.year),range(len(pd.unique(df.Date.dt.year))), rotation=90)
     plt.ylabel("Positivity Chair")
     plt.title("Positivity Chair by meeting")
     plt.show()
@@ -65,7 +65,7 @@ def plot_score_positivity_chair(df):
 def plot_score_positivity_total(df):
     plt.figure()
     sns.relplot(x='Date', y='score_posi', hue='chair_in_charge', data=df)
-    plt.xticks(df.Date.dt.year,range(len(pd.unique(df.Date.dt.year))), rotation=90)
+    plt.xticks(pd.unique(df.Date.dt.year),range(len(pd.unique(df.Date.dt.year))), rotation=90)
     plt.ylabel("Positivity Total")
     plt.title("Positivity Total by meeting")
     plt.show()
@@ -75,7 +75,7 @@ def plot_score_positivity_total(df):
 def plot_score_positivity_difference(df):
     plt.figure()
     sns.relplot(x='Date', y='score_posi', hue='chair_in_charge', data=df)
-    plt.xticks(df.Date.dt.year,range(len(pd.unique(df.Date.dt.year))), rotation=90)
+    plt.xticks(pd.unique(df.Date.dt.year),range(len(pd.unique(df.Date.dt.year))), rotation=90)
     plt.ylabel("Difference Positivity")
     plt.title("Difference Positivity by meeting (chair score - total score)")
     plt.show()
@@ -83,8 +83,20 @@ def plot_score_positivity_difference(df):
 
 
 plot_score_hawkish(df)
-plot_score_positivity_chair(df)
-plot_score_positivity_difference(df)
-plot_score_positivity_total(df)
+#plot_score_positivity_chair(df)
+#plot_score_positivity_difference(df)
+#plot_score_positivity_total(df)
 
 #%% Per interlocutor visuals
+
+
+
+
+
+
+
+
+
+
+
+
