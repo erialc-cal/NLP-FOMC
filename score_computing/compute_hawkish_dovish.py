@@ -7,7 +7,7 @@ Created on Mon Sep 20 15:56:22 2021
 
 Based on Etienne Le Naour's code and this paper : https://eml.berkeley.edu/~ulrike/Papers/FOMC_48.pdf 
 We add the following correction : "We drop n-grams containing more than one “goal” or “attitude” 
-with different connotations.""
+with different connotations."" 
 
 """
 import os
@@ -103,7 +103,3 @@ def add_hawkish_score(df, n_gram=5):
     df['score_hawkish']= score
     return df 
 
-#%% Test
-df2 = pd.read_csv(parent+'/update_version_7.csv', low_memory=True)
-
-add_hawkish_score(df2, 11)
