@@ -3,23 +3,38 @@
 Example code for producing topic mixtures, given a file of text data.
 
 Author: Alexander T. J. Barron
+Modified by: Claire He 
 Date Created: 2017-11-25
 
 """
 
-import argparse
+# import argparse
 import os
+project_directory ,_ = os.path.split(os.path.dirname(__file__))
 
 import numpy as np
 
 from sklearn.feature_extraction.text import CountVectorizer
 from lda import LDA
 
-def learn_topics(textpath, topicnum):
+def create_text():
+    # Text and vocabulary preparation
+    texts = ""
+    for filename in os.listdir(project_directory+'/scrapping/transcript_to_word_set/'):
+        try :
+            with open(project_directory+'/scrapping/transcript_to_word_set/'+filename, 'r') as doc:
+                texts += doc.read()
+        except : 
+            pass
+    with open(project_directory+'/novelty_transience_resonance/text.txt', 'w') as sortie:
+        sortie.write(texts)
+        sortie.close
 
-    with open(textpath) as f:
+def learn_topics(topicnum):
+
+    with open(project_directory+'/novelty_transience_resonance/text.txt') as f:
         texts = f.readlines()
-
+        
     # Get vocabulary and word counts.  Use the top 10,000 most frequent
     # lowercase unigrams with at least 3 alphabetical, non-numeric characters,
     # punctuation treated as separators.
@@ -54,23 +69,29 @@ def save_topicmodel(doc_topic, topic_word, vocabulary, dirpath):
 
     return topicmixture_outpath, topic_outpath, vocab_outpath
 
-def main(textpath, topicnum, dirpath):
+# def main(topicnum, dirpath):
 
-    doc_topic, topic_word, vocabulary = learn_topics(textpath, topicnum)
+#     doc_topic, topic_word, vocabulary = learn_topics(topicnum)
 
-    topicmixture_outpath, topic_outpath, vocab_outpath = \
-            save_topicmodel(doc_topic, topic_word, vocabulary, dirpath)
+#     topicmixture_outpath, topic_outpath, vocab_outpath = \
+#             save_topicmodel(doc_topic, topic_word, vocabulary, dirpath)
 
-if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("textpath", type=str,
-           help="Path to file of text data, one document per row, " \
-                   "rows delimited with newlines.") 
-    parser.add_argument("topicnum", type=int,
-            help="Desired number of topics.")
-    parser.add_argument("dirpath", type=str,
-           help="Directory path to enclose results.") 
-    args = parser.parse_args()
+###  Tests : 
+# doc_topic, topic_word, vocabulary = learn_topics(100)
 
-    main(args.textpath, args.topicnum, args.dirpath)
+# topicmixture_outpath, topic_outpath, vocab_outpath = \
+#         save_topicmodel(doc_topic, topic_word, vocabulary, project_directory+'/novelty_transience_resonance/')
+
+
+#%%
+# if __name__ == "__main__":
+
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument("topicnum", type=int,
+#             help="Desired number of topics.")
+#     parser.add_argument("dirpath", type=str,
+#             help="Directory path to enclose results.") 
+#     args = parser.parse_args()
+
+#     main(args.topicnum, args.dirpath)

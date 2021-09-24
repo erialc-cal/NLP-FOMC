@@ -2,6 +2,7 @@
 """
 Example code for calculating novelty, transience, and resonance.
 Author: Alexander T. J. Barron
+Modified by Claire He
 Date Created: 2017-11-09
 """
 
@@ -93,7 +94,7 @@ def save_novel_trans_reson(novelties, transiences, resonances, dirpath):
     outpath = os.path.join(dirpath, "novel_trans_reson.txt")
     np.savetxt(outpath, np.vstack(zip(novelties, transiences, resonances)))
 
-def main(topic_mixture_path, scale, dirpath):
+def create_topic_mixture(topic_mixture_path, scale, dirpath):
 
     thetas_arr = np.loadtxt(topic_mixture_path)
 
@@ -101,18 +102,22 @@ def main(topic_mixture_path, scale, dirpath):
             novelty_transience_resonance(thetas_arr, scale)
 
     save_novel_trans_reson(novelties, transiences, resonances, dirpath)
+    
+    
+    
+#%%
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("topic_mixture_path", type=str,
-           help="Path to text file of topic mixtures, one per row, " \
-                   "elements delimited with whitespace, " \
-                   "rows delimited with newlines.") 
-    parser.add_argument("scale", type=int,
-            help="Size of windows for calculation.")
-    parser.add_argument("dirpath", type=str,
-           help="Directory path to enclose results.") 
-    args = parser.parse_args()
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument("topic_mixture_path", type=str,
+#            help="Path to text file of topic mixtures, one per row, " \
+#                    "elements delimited with whitespace, " \
+#                    "rows delimited with newlines.") 
+#     parser.add_argument("scale", type=int,
+#             help="Size of windows for calculation.")
+#     parser.add_argument("dirpath", type=str,
+#            help="Directory path to enclose results.") 
+#     args = parser.parse_args()
 
-    main(args.topic_mixture_path, args.scale, args.dirpath)
+#     main(args.topic_mixture_path, args.scale, args.dirpath)
