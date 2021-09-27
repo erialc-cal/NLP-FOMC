@@ -11,11 +11,19 @@ Date Created: 2017-11-25
 # import argparse
 import os
 project_directory = os.path.dirname(__file__)
-
+import numpy as np
+import pandas as pd
 from learn_topics import learn_topics, save_topicmodel
 from calculate_novelty_transience_resonance import \
         novelty_transience_resonance, save_novel_trans_reson
+        
+        
+file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/update_version_7.csv'
 
+df = pd.read_csv(file_path, low_memory=True)       
+
+
+#%% 
 def main(topicnum, scale, dirpath):
 
     doc_topic, topic_word, vocabulary = learn_topics(topicnum)
@@ -25,15 +33,67 @@ def main(topicnum, scale, dirpath):
 
     novelties, transiences, resonances = \
             novelty_transience_resonance(doc_topic, scale)
-
-    save_novel_trans_reson(novelties, transiences, resonances, dirpath)
+    
+    return novelties, transiences, resonances
+    #save_novel_trans_reson(novelties, transiences, resonances, dirpath)
     
 #%%
 # We coarse-grain into 100 topics 
 topicnum = 100
 scale = 20
-main(topicnum, scale, project_directory)
+with open("/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/topics.txt", 'r') as f:
+    doc_topic = f.readlines()
+with open("/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/topic_mixtures.txt", 'r') as f:
+    topic_word = f.readlines()
+with open("/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/vocabulary.txt", "r") as f:
+    vocabulary = f.readlines()
+  
+# doc_topic = np.float_(doc_topic[0].split())
+
+# novelties, transiences, resonances = novelty_transience_resonance(np.array(doc_topic), 20)
+#%%
+
+def prepare_ntr(df, two_chairs=False, chair_in_charge=['CHAIR YELLEN']):
+    if two_chairs : 
+        # comparing novelty, transience and resonance of topics from two different successive chairs
+        assert len(chair_in_charge)==2
+        mask = (df.chair_in_charge.isin(chair_in_charge))
+        doc_topic, topic_word, vocabulary = learn_topics(100, df_flag=True, df=df[mask])
+        topicmixture_outpath, topic_outpath, vocab_outpath = \
+            save_topicmodel(doc_topic, topic_word, vocabulary, project_directory+f'/between_chairs/{chair_in_charge[0]}_{chair_in_charge[1]}_')
+        novelties, transiences, resonances = \
+            novelty_transience_resonance(doc_topic, scale)
+    else :
+        assert len(chair_in_charge)==1
+        mask = df.chair_in_charge.isin(chair_in_charge)
+        doc_topic, topic_word, vocabulary = learn_topics(100, df_flag=True, df=df[mask])
+        topicmixture_outpath, topic_outpath, vocab_outpath = \
+            save_topicmodel(doc_topic, topic_word, vocabulary, project_directory+f'/per_chair/{chair_in_charge[0]}_')
+        novelties, transiences, resonances = \
+            novelty_transience_resonance(doc_topic, scale)
+        
+    return novelties, transiences, resonances
+    #%% TESTS
     
+
+novelties, transiences, resonances = prepare_ntr(df1, two_chairs=False, chair_in_charge=['CHAIR YELLEN'])
+    
+    
+    #%%
+    
+def create_text():
+    # Text and vocabulary preparation
+    texts = ""
+    for filename in os.listdir(project_directory+'/scrapping/transcript_to_word_set/'):
+        try :
+            with open(project_directory+'/scrapping/transcript_to_word_set/'+filename, 'r') as doc:
+                texts += doc.read()
+        except : 
+            pass
+    with open(project_directory+'/novelty_transience_resonance/text.txt', 'w') as sortie:
+        sortie.write(texts)
+        sortie.close
+        
 #%%
 
 # if __name__ == "__main__":

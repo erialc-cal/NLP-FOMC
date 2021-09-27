@@ -10,6 +10,7 @@ Date Created: 2017-11-25
 
 # import argparse
 import os
+import pandas as pd
 project_directory ,_ = os.path.split(os.path.dirname(__file__))
 
 import numpy as np
@@ -17,23 +18,22 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from lda import LDA
 
-def create_text():
-    # Text and vocabulary preparation
-    texts = ""
-    for filename in os.listdir(project_directory+'/scrapping/transcript_to_word_set/'):
-        try :
-            with open(project_directory+'/scrapping/transcript_to_word_set/'+filename, 'r') as doc:
-                texts += doc.read()
-        except : 
-            pass
-    with open(project_directory+'/novelty_transience_resonance/text.txt', 'w') as sortie:
-        sortie.write(texts)
-        sortie.close
 
-def learn_topics(topicnum):
 
-    with open(project_directory+'/novelty_transience_resonance/text.txt') as f:
-        texts = f.readlines()
+def learn_topics(topicnum, df_flag=False,dirpath=project_directory+'/novelty_transience_resonance/text.txt', df=''):
+    texts = ''
+    if df_flag :
+        print("dirpath should be dataframe path")
+        for statement in df.statement :
+            texts += statement
+        with open(project_directory+'/temporary_text.txt', 'w') as sortie:
+            sortie.write(texts)
+            sortie.close
+        with open(project_directory+'/temporary_text.txt') as f:
+            texts = f.readlines()
+    else :
+        with open(dirpath) as f:
+            texts = f.readlines()
         
     # Get vocabulary and word counts.  Use the top 10,000 most frequent
     # lowercase unigrams with at least 3 alphabetical, non-numeric characters,

@@ -26,7 +26,8 @@ def KLdivergence_from_probdist_arrays(pdists0, pdists1):
       numpy.ndarray: KL divergences, where the second array's rows are the
         distributions in the numerator of the log in KL divergence
     """
-
+    pdists0 = pdists0.flatten()
+    pdists1 = pdists1.flatten()
     assert pdists0.shape == pdists1.shape, 'pdist* shapes must be identical'
 
     if len(pdists0.shape) == 1:
