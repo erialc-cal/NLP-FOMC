@@ -58,17 +58,23 @@ def prepare_ntr(df, two_chairs=False, chair_in_charge=['CHAIR YELLEN']):
         # comparing novelty, transience and resonance of topics from two different successive chairs
         assert len(chair_in_charge)==2
         mask = (df.chair_in_charge.isin(chair_in_charge))
+        print("Document preparation...")
         doc_topic, topic_word, vocabulary = learn_topics(100, df_flag=True, df=df[mask])
+        print("Topic processing...")
         topicmixture_outpath, topic_outpath, vocab_outpath = \
             save_topicmodel(doc_topic, topic_word, vocabulary, project_directory+f'/between_chairs/{chair_in_charge[0]}_{chair_in_charge[1]}_')
+        print("Computing novelty, transience and resonance...")
         novelties, transiences, resonances = \
             novelty_transience_resonance(doc_topic, scale)
     else :
         assert len(chair_in_charge)==1
+        print("Document preparation...")
         mask = df.chair_in_charge.isin(chair_in_charge)
+        print('Topic processing...')
         doc_topic, topic_word, vocabulary = learn_topics(100, df_flag=True, df=df[mask])
         topicmixture_outpath, topic_outpath, vocab_outpath = \
             save_topicmodel(doc_topic, topic_word, vocabulary, project_directory+f'/per_chair/{chair_in_charge[0]}_')
+        print('Computing novelty, transience and resonance...')
         novelties, transiences, resonances = \
             novelty_transience_resonance(doc_topic, scale)
         

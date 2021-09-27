@@ -23,7 +23,7 @@ from lda import LDA
 def learn_topics(topicnum, df_flag=False,dirpath=project_directory+'/novelty_transience_resonance/text.txt', df=''):
     texts = ''
     if df_flag :
-        print("dirpath should be dataframe path")
+       # print("dirpath should be dataframe path")
         for statement in df.statement :
             texts += statement
         with open(project_directory+'/temporary_text.txt', 'w') as sortie:
@@ -49,6 +49,7 @@ def learn_topics(topicnum, df_flag=False,dirpath=project_directory+'/novelty_tra
     doc_topic = lda_model.fit_transform(doc_vcnts)
     topic_word = lda_model.topic_word_
 
+    os.remove(project_directory+'/temporary_text.txt')
     return doc_topic, topic_word, vocabulary
 
 def save_topicmodel(doc_topic, topic_word, vocabulary, dirpath):
