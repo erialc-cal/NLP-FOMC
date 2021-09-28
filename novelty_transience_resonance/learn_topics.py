@@ -22,7 +22,7 @@ from lda import LDA
 
 def learn_topics(topicnum, df_flag=False,dirpath=project_directory+'/novelty_transience_resonance/text.txt', df=''):
     texts = ''
-    if df_flag :
+    if df_flag :  #### THIS OPTION DOESN T WORK FOR NOW
        # print("dirpath should be dataframe path")
         for statement in df.statement :
             texts += statement
