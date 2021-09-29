@@ -10,9 +10,9 @@ Created on Tue Sep 14 15:35:24 2021
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from tqdm import trange 
 from gensim.parsing.preprocessing import STOPWORDS
-
+import seaborn as sns
 import nltk
 nltk.data.path.append('nltk_data')
 from nltk.corpus import stopwords
@@ -24,13 +24,15 @@ from nltk.tokenize import word_tokenize
 from itertools import groupby
 stop_words = stopwords.words('english')
 lemmatizer = WordNetLemmatizer() 
+import datetime as dt
 
 #%%
 #### Prepare speech document : 
 file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/update_version_7.csv'
 
 df = pd.read_csv(file_path, low_memory=True)
-    
+df.Date = df.Date.astype('datetime64')
+df1 = df[df.Date.dt.year==2015]
 
 #%%
 statement = df.statement[[230]][230]
@@ -136,7 +138,21 @@ def get_freq_two_three(statement):
     return final_col, final_pos
 
 
+def plot_freq_colloquial(list_statement):
+    """ Plots colloquial sentences' frequency distributions """
+    # Concaténer tous les statements
+    statement = ""
+    for s in list_statement:
+        statement += " "+s
+    col_list, pos_list = colloquial_transformation(statement)
+    freq = [len(list(group)) for key, group in groupby(col_list)]
+    fig = plt.figure()
+    plt.title("Colloquial frequency distribution")
+    plt.hist(freq)
+    plt.plot()
+
 def replace_words_by_colloquials(statement):
+    """ Replaces in statement the individual words by colloquial sentences """
     text = word_tokenize(statement)
     new_text=""
     col, pos = get_freq_two_three(statement)
@@ -144,11 +160,11 @@ def replace_words_by_colloquials(statement):
         if (idx in pos) :
             ind = pos.index(idx)# two-words colloquial
             if len(col[ind].split())==2:
-                new_text+=col[ind]
+                new_text+=" "+col[ind]
             elif len(col[ind].split())==3: #three-words colloquial
-                new_text+=col[ind]
+                new_text+= " "+col[ind]
         else :
-            new_text+= word
+            new_text+= " "+word
     return new_text 
                     
             
@@ -177,17 +193,21 @@ def stem_tfidf(statement):
             pass
     final_list = list(filter(None, final_list))
     for ele in final_list:
-        lemmatize_list += lemmatizer.lemmatize(ele) 
+        lemmatize_list += " "+lemmatizer.lemmatize(ele) 
     
     return lemmatize_list
 
 
 #%%
+df1 = df1.reset_index()
 
-
-for statement in df.statement :
-    statement = replace_words_by_colloquials(statement)
-    clean_statement = stem_tfidf(statement)
-    df['cleaned']=clean_statement
+clean=[]
+for i in trange(len(df1.statement)):
+    statement = df1.statement.iloc[[i]][i]
+    statement = stem_tfidf(statement)
+    clean_statement = replace_words_by_colloquials(statement)
+    clean.append(clean_statement)
+    
+df1['cleaned']=clean
 
 
