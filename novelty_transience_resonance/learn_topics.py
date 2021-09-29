@@ -48,8 +48,10 @@ def learn_topics(topicnum, df_flag=False,dirpath=project_directory+'/novelty_tra
     lda_model = LDA(topicnum, n_iter=8000, refresh=2000) 
     doc_topic = lda_model.fit_transform(doc_vcnts)
     topic_word = lda_model.topic_word_
-
-    os.remove(project_directory+'/temporary_text.txt')
+    if df_flag:
+        os.remove(project_directory+'/temporary_text.txt')
+    else : 
+        pass
     return doc_topic, topic_word, vocabulary
 
 def save_topicmodel(doc_topic, topic_word, vocabulary, dirpath):
