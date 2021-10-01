@@ -1,0 +1,60 @@
+topic0,technic,author,procedur,consult,purpos,deleg,window,separ,schedul,wish,youv,review,mechan,establish,element,understood,instruct,ioer,conting,sound
+ ,0.036,0.032,0.028,0.022,0.018,0.017,0.014,0.014,0.013,0.012,0.012,0.012,0.011,0.011,0.01,0.01,0.01,0.01,0.01,0.009
+topic1,texa,count,ga,drive,barrel,compani,crude,dalla,watch,drill,war,ceo,food,wors,rig,pool,driven,eleventh,effici,power
+ ,0.022,0.015,0.014,0.013,0.012,0.01,0.009,0.009,0.008,0.008,0.008,0.008,0.008,0.007,0.007,0.007,0.006,0.006,0.006,0.006
+topic2,gap,median,sep,equilibrium,tendenc,variabl,longerrun,error,calcul,individu,summari,taylor,equat,interv,dot,headlin,baselin,vari,cite,prescript
+ ,0.047,0.041,0.034,0.03,0.026,0.023,0.02,0.019,0.019,0.014,0.013,0.012,0.011,0.01,0.01,0.01,0.01,0.01,0.009,0.009
+topic3,group,theori,explan,perman,paper,worker,age,correl,research,translat,mandat,decad,book,phillip,post,secular,hypothesi,promot,loss,fashion
+ ,0.014,0.013,0.012,0.012,0.012,0.011,0.01,0.01,0.009,0.009,0.009,0.008,0.008,0.007,0.007,0.007,0.007,0.007,0.007,0.006
+topic4,tax,polit,deficit,congress,budget,administr,legisl,law,packag,attitud,lose,elect,check,carri,stimul,resolut,gold,enorm,congression,social
+ ,0.052,0.031,0.03,0.029,0.026,0.017,0.016,0.014,0.014,0.013,0.012,0.011,0.01,0.01,0.008,0.008,0.007,0.007,0.006,0.006
+topic5,york,offic,economist,secretari,director,divis,david,research,special,advis,statist,senior,john,affair,assist,thoma,confer,powel,brian,attend
+ ,0.034,0.029,0.027,0.026,0.026,0.025,0.024,0.023,0.019,0.016,0.016,0.015,0.015,0.015,0.014,0.014,0.014,0.013,0.013,0.012
+topic6,optim,gap,taylor,framework,simul,simpl,policymak,longrun,paper,deviat,constant,steadi,concept,save,exercis,bound,equilibrium,dsge,empir,equal
+ ,0.037,0.03,0.02,0.02,0.017,0.016,0.015,0.013,0.013,0.011,0.011,0.011,0.01,0.01,0.01,0.01,0.009,0.009,0.009,0.008
+topic7,panel,shown,exhibit,left,blue,black,red,dealer,premium,bar,append,contrast,investor,median,upper,distribut,summar,baselin,dot,dash
+ ,0.149,0.105,0.057,0.047,0.027,0.026,0.026,0.02,0.014,0.013,0.012,0.011,0.011,0.01,0.009,0.009,0.009,0.007,0.007,0.007
+topic8,bluebook,asymmetr,symmetr,restraint,page,midpoint,inclin,upper,seek,longrun,ii,bia,lean,asymmetri,band,drift,tent,miss,toler,symmetri
+ ,0.035,0.034,0.034,0.03,0.022,0.022,0.022,0.02,0.018,0.017,0.016,0.015,0.013,0.013,0.012,0.011,0.011,0.011,0.01,0.01
+topic9,reinvest,strategi,tool,taper,guidanc,threshold,bound,trigger,principl,quantit,qualit,phase,macroeconom,calendar,tie,baselin,ceas,confus,learn,choos
+ ,0.074,0.062,0.036,0.029,0.029,0.027,0.022,0.019,0.018,0.018,0.012,0.012,0.012,0.011,0.011,0.01,0.01,0.009,0.008,0.007
+topic10,yield,currenc,volatil,intervent,equiti,euro,desk,japanes,page,yen,ecb,widen,german,narrow,interven,swap,japan,bond,deposit,offici
+ ,0.042,0.034,0.032,0.026,0.02,0.017,0.016,0.015,0.014,0.014,0.013,0.012,0.01,0.01,0.009,0.009,0.008,0.008,0.007,0.007
+topic11,gnp,veloc,steve,ml,sensit,sorri,oh,jim,deposit,parte,wed,anyway,wallich,paul,save,ma,ball,henri,chuck,nonborrow
+ ,0.052,0.037,0.03,0.026,0.018,0.017,0.016,0.016,0.015,0.015,0.015,0.015,0.014,0.014,0.014,0.013,0.013,0.012,0.012,0.012
+topic12,stage,deflat,suspect,histori,dramat,learn,notion,statist,awar,obviou,element,implicit,huge,behav,recal,accumul,crucial,conceiv,evalu,perceiv
+ ,0.029,0.023,0.02,0.015,0.013,0.013,0.013,0.011,0.011,0.011,0.01,0.009,0.009,0.009,0.009,0.009,0.008,0.008,0.008,0.008
+topic13,break,fair,fisher,coffe,anyon,write,convers,group,street,somebodi,readi,studi,list,gave,remind,cover,letter,felt,occas,item
+ ,0.041,0.024,0.021,0.02,0.018,0.014,0.014,0.012,0.012,0.012,0.011,0.011,0.011,0.01,0.01,0.01,0.009,0.009,0.009,0.009
+topic14,loan,mortgag,institut,lend,loss,commerci,home,paper,banker,collater,origin,cash,estat,qualiti,card,equiti,lender,refinanc,volum,subprim
+ ,0.055,0.049,0.04,0.036,0.026,0.021,0.018,0.013,0.012,0.012,0.011,0.009,0.009,0.008,0.008,0.007,0.007,0.007,0.007,0.007
+topic15,compens,payrol,slack,transitori,medium,disappoint,monthli,drag,slowdown,worker,solid,headlin,weather,eci,pickup,hourli,diminish,soft,momentum,round
+ ,0.033,0.033,0.028,0.019,0.017,0.015,0.011,0.011,0.011,0.01,0.01,0.009,0.009,0.009,0.009,0.009,0.009,0.008,0.008,0.008
+topic16,bond,corpor,ratio,leverag,premium,yield,vulner,equiti,investor,valuat,volatil,loan,mutual,nonfinanci,dealer,captur,earn,monitor,stress,supervisori
+ ,0.053,0.04,0.033,0.028,0.024,0.022,0.019,0.013,0.013,0.012,0.01,0.01,0.01,0.009,0.009,0.008,0.007,0.007,0.007,0.006
+topic17,contact,region,compani,auto,worker,agricultur,estat,director,hire,commerci,steel,equip,plant,residenti,truck,shortag,home,skill,farm,citi
+ ,0.041,0.027,0.02,0.02,0.018,0.015,0.014,0.013,0.012,0.011,0.011,0.01,0.009,0.009,0.009,0.008,0.008,0.008,0.008,0.007
+topic18,paragraph,guidanc,draft,remov,phrase,evolv,ltern,warrant,confer,convey,criteria,odd,page,patient,lift,written,intend,bracket,stanc,sep
+ ,0.091,0.032,0.018,0.017,0.017,0.016,0.015,0.014,0.014,0.013,0.012,0.011,0.011,0.011,0.01,0.01,0.009,0.009,0.009,0.009
+topic19,europ,european,yield,greec,euro,sovereign,investor,ecb,summer,explan,depress,greek,negoti,weaken,cliff,agreement,contribut,drag,default,sentiment
+ ,0.04,0.032,0.015,0.015,0.012,0.011,0.011,0.009,0.009,0.009,0.008,0.008,0.008,0.008,0.007,0.006,0.006,0.006,0.006,0.006
+topic20,cpi,season,februari,contact,region,permit,plu,novemb,seri,compon,experienc,rose,slight,minu,horizon,special,healthi,headlin,tip,preliminari
+ ,0.047,0.033,0.03,0.015,0.014,0.014,0.013,0.012,0.012,0.012,0.01,0.01,0.01,0.009,0.009,0.008,0.008,0.008,0.008,0.008
+topic21,global,commod,china,japan,depreci,abroad,currenc,contribut,extern,chines,asia,asian,canada,brazil,advanc,eme,deficit,offici,mexico,slowdown
+ ,0.059,0.044,0.039,0.027,0.021,0.02,0.017,0.016,0.016,0.014,0.012,0.012,0.011,0.01,0.009,0.009,0.008,0.008,0.008,0.008
+topic22,somehow,room,danger,listen,sound,sit,critic,imagin,fast,gotten,anybodi,nice,resolv,tough,piec,anyway,notion,road,convinc,psycholog
+ ,0.015,0.014,0.014,0.014,0.014,0.013,0.013,0.012,0.01,0.009,0.009,0.009,0.009,0.009,0.009,0.009,0.009,0.009,0.008,0.008
+topic23,resourc,util,tilt,neutral,slack,paus,momentum,stanc,moreov,reinforc,advers,contrast,prove,percept,tighter,cycl,judg,deterior,section,uncertain
+ ,0.036,0.032,0.019,0.018,0.017,0.015,0.013,0.012,0.011,0.01,0.01,0.01,0.009,0.009,0.008,0.008,0.008,0.008,0.008,0.008
+topic24,rrp,facil,cap,overnight,desk,test,repo,tool,counterparti,ioer,dealer,conduct,primari,auction,rp,author,quarterend,usag,deposit,swap
+ ,0.067,0.042,0.04,0.036,0.029,0.029,0.024,0.019,0.019,0.018,0.014,0.012,0.011,0.01,0.009,0.009,0.009,0.008,0.007,0.007
+topic25,swap,approv,peter,don,mike,kohn,draw,stern,parri,hoenig,bob,agreement,somebodi,arrang,item,request,boehn,minehan,kelley,angel
+ ,0.037,0.029,0.027,0.026,0.026,0.026,0.024,0.02,0.019,0.018,0.018,0.017,0.016,0.016,0.016,0.016,0.015,0.015,0.015,0.015
+topic26,bound,send,messag,delay,lift,bubbl,cycl,react,met,ve,ll,horizon,st,medium,serious,qe,excel,sometim,steadi,expansionari
+ ,0.026,0.019,0.018,0.016,0.013,0.01,0.009,0.009,0.009,0.008,0.008,0.007,0.007,0.007,0.007,0.006,0.006,0.006,0.006,0.006
+topic27,consumpt,profit,save,wealth,stimulu,nairu,nearterm,novemb,deceler,equip,moreov,expenditur,vehicl,home,slowdown,durabl,cycl,equiti,weaken,motor
+ ,0.027,0.023,0.017,0.016,0.015,0.013,0.012,0.011,0.01,0.01,0.01,0.01,0.01,0.009,0.009,0.009,0.009,0.008,0.008,0.007
+topic28,consensu,sep,publish,subcommitte,explicit,enhanc,individu,transpar,collect,fan,clarifi,document,mandat,numer,adopt,speech,dissent,convey,confus,regim
+ ,0.04,0.018,0.018,0.018,0.018,0.015,0.013,0.012,0.012,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.009,0.009,0.009,0.008
+topic29,mb,portfolio,matur,agenc,sell,exit,longerterm,durat,lsap,trillion,roll,soma,extens,redempt,desk,instrument,yield,strategi,composit,princip
+ ,0.062,0.046,0.031,0.03,0.029,0.028,0.024,0.019,0.018,0.016,0.015,0.013,0.012,0.012,0.01,0.01,0.009,0.009,0.009,0.008
