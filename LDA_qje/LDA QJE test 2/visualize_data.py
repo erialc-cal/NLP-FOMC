@@ -43,9 +43,15 @@ import numpy as np
 
 l_topics = []
 l_scores = []
-for i in trange(30):
-    l_topics.append(t_desc.iloc[i+1].tolist())
-    l_scores.append(t_desc.iloc[i].tolist()[1:])
+for i in trange(1,30):
+    l_topics.append(t_desc.iloc[2*i-1].tolist()[1:13])
+    l_scores.append(t_desc.iloc[2*i].tolist()[1:13])
     
 l_scores = [np.float_(elem) for elem in l_scores]
+#%%
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(20,10))
+sns.heatmap(l_scores,cmap="YlGnBu",annot=l_topics, fmt="")
 
