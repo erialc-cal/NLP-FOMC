@@ -198,6 +198,8 @@ def stem_tfidf(statement):
     return lemmatize_list
 
 
+
+
 #%%
 df1 = df1.reset_index()
 
@@ -209,5 +211,8 @@ for i in trange(len(df1.statement)):
     clean.append(clean_statement)
     
 df1['cleaned']=clean
+#%%
 
+
+df1[['cleaned','chair_in_charge', 'Date']].to_csv('clean_statements.csv')
 

@@ -12,7 +12,7 @@ import topicmodels
 
 
 #### Prepare speech document : 
-file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/update_version_7.csv'
+file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/LDA_qje/clean_statements.csv'
 data = pd.read_csv(file_path, encoding="utf-8")
 #data = data[data.year >= 1947]
 data.Date = data.Date.astype('datetime64')
@@ -21,7 +21,7 @@ data['year']=data.Date.dt.year
 #%%
 
 
-docsobj = topicmodels.RawDocs(data.statement, "long")
+docsobj = topicmodels.RawDocs(data.cleaned, "long")
 docsobj.token_clean(1)
 docsobj.stopword_remove("tokens")
 docsobj.stem()
@@ -61,8 +61,8 @@ ldaobj.dict_print()
 # query aggregate documents
 ###############
 
-data['statement'] = [' '.join(s) for s in docsobj.stems]
-aggspeeches = data.groupby(['year', 'chair_in_charge'])['statement'].\
+data['cleaned'] = [' '.join(s) for s in docsobj.stems]
+aggspeeches = data.groupby(['year', 'chair_in_charge'])['cleaned'].\
     apply(lambda x: ' '.join(x))
 aggdocs = topicmodels.RawDocs(aggspeeches)
 
@@ -76,7 +76,7 @@ queryobj.perplexity()
 dt_query = queryobj.dt_avg()
 aggdata = pd.DataFrame(dt_query, index=aggspeeches.index,
                        columns=['T' + str(i) for i in range(queryobj.K)])
-aggdata.to_csv("final_output_agg.csv")
+aggdata.to_csv("final_output_agg_2.csv")
 
 ###############
 # top topics
@@ -94,4 +94,4 @@ ranking = ranking.groupby(level='chair_in_charge').mean()
 ranking = ranking.sort_values('year')
 ranking = ranking.drop('year', 1)
 ranking = ranking.apply(top_topics, axis=1)
-ranking.to_csv("president_top_topics.csv")
+ranking.to_csv("president_top_topics_2.csv")
