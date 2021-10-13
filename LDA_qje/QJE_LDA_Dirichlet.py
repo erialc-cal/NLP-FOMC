@@ -76,7 +76,7 @@ queryobj.perplexity()
 dt_query = queryobj.dt_avg()
 aggdata = pd.DataFrame(dt_query, index=aggspeeches.index,
                        columns=['T' + str(i) for i in range(queryobj.K)])
-aggdata.to_csv("final_output_agg_2.csv")
+aggdata.to_csv("final_output_agg.csv")
 
 ###############
 # top topics
@@ -94,4 +94,4 @@ ranking = ranking.groupby(level='chair_in_charge').mean()
 ranking = ranking.sort_values('year')
 ranking = ranking.drop('year', 1)
 ranking = ranking.apply(top_topics, axis=1)
-ranking.to_csv("president_top_topics_2.csv")
+ranking.to_csv("president_top_topics.csv")

@@ -9,7 +9,7 @@ import pandas as pd
 
 # SELECT TEST VISUALIZATION NUMBER
 
-nb = 3
+nb = 4
 
 
 
@@ -48,8 +48,10 @@ df_heatmap = df_final.drop(columns='year').set_index('chair_in_charge')
 from tqdm import trange
 import numpy as np
 
-l_topics = []
-l_scores = []
+
+l_scores = [t_desc.iloc[0].tolist()[1:14]]
+l_col0 = t_desc.columns.tolist()[1:14]
+l_topics = [l_col0]
 for i in trange(1,30):
     l_topics.append(t_desc.iloc[2*i-1].tolist()[1:14])
     l_scores.append(t_desc.iloc[2*i].tolist()[1:14])
@@ -62,9 +64,13 @@ import seaborn as sns
 
 plt.figure(figsize=(20,10))
 sns.heatmap(l_scores,cmap="Purples",annot=l_topics, fmt="")
+plt.title("Topics ")
 
-#%% 
+#%% VISUALS PER CHAIR PER YEAR
 
+df_final2 = df_final.set_index(['chair_in_charge', 'year'])
+sns.heatmap(df_final2)
+plt.title("Distribution des topics par année")
 
 
 

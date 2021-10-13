@@ -28,11 +28,11 @@ import datetime as dt
 
 #%%
 #### Prepare speech document : 
-file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/update_version_7.csv'
+file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/updated_version_6.csv'
 
 df = pd.read_csv(file_path, low_memory=True)
 df.Date = df.Date.astype('datetime64')
-df1 = df[df.Date.dt.year==2015]
+df1 = df #df[df.Date.dt.year==2015]
 
 #%%
 statement = df.statement[[230]][230]
@@ -205,8 +205,11 @@ df1 = df1.reset_index()
 
 clean=[]
 for i in trange(len(df1.statement)):
-    statement = df1.statement.iloc[[i]][i]
-    statement = stem_tfidf(statement)
+    statement = str(df1.statement.iloc[[i]][i])
+    try:
+        statement = stem_tfidf(statement)
+    except: 
+        pass
     clean_statement = replace_words_by_colloquials(statement)
     clean.append(clean_statement)
     
