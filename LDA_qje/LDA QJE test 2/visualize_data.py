@@ -55,10 +55,17 @@ for i in trange(1,30):
     l_scores.append(t_desc.iloc[2*i].tolist()[1:14])
     
 l_scores = [np.float_(elem) for elem in l_scores]
-#%%
+
+#%% SAME VISUALS AS IN ARTICLE
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 plt.figure(figsize=(20,10))
 sns.heatmap(l_scores,cmap="Purples",annot=l_topics, fmt="")
+
+#%% 
+
+
+
+
 
