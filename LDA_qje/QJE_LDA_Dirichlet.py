@@ -12,11 +12,15 @@ import topicmodels
 
 
 #### Prepare speech document : 
-file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/LDA_qje/clean_statements.csv'
-data = pd.read_csv(file_path, encoding="utf-8")
+file_path = '/Users/h2jw/Documents/GitHub/NLP-FOMC/update_version_8.csv'
+    #file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/LDA_qje/clean_statements.csv'
+df = pd.read_csv(file_path, encoding="utf-8")
+data = df[['chair_in_charge', 'cleaned', 'Date']]
 #data = data[data.year >= 1947]
 data.Date = data.Date.astype('datetime64')
 data['year']=data.Date.dt.year
+data['cleaned']=str(data['cleaned'])
+
 
 #%%
 
