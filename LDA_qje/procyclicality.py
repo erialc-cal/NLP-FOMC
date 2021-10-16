@@ -18,7 +18,7 @@ cycle = pd.read_csv("/Users/h2jw/Documents/GitHub/NLP-FOMC/LDA_qje/Additional Da
 cycle = cycle.astype({'peak':'datetime64', 'trough':'datetime64'})
 
 
-file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/LDA_qje/clean_statements.csv'
+file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/update_version_8.csv'
 df = pd.read_csv(file_path, encoding="utf-8")
 
 df.Date = df.Date.astype('datetime64')
@@ -32,7 +32,7 @@ df.Date = df.Date.astype('datetime64')
 #cycle['peak']= cycle.peak.dt.year
 #cycle['trough']=cycle.trough.dt.year
 
-procyclicality = [1 for i in range(45)]
+procyclicality = [1 for i in range(len(df))]
 for idx in trange(len(df)):
     year = df.iloc[[idx]]['Date'][idx] 
     for idx2 in range(len(cycle)):

@@ -9,7 +9,7 @@ import pandas as pd
 
 # SELECT TEST VISUALIZATION NUMBER
 
-nb = 4
+nb = 2
 
 
 
@@ -65,13 +65,14 @@ import seaborn as sns
 plt.figure(figsize=(20,10))
 sns.heatmap(l_scores,cmap="Purples",annot=l_topics, fmt="")
 plt.title("Topics ")
+plt.show()
 
 #%% VISUALS PER CHAIR PER YEAR
-
+plt.figure()
 df_final2 = df_final.set_index(['chair_in_charge', 'year'])
 sns.heatmap(df_final2)
 plt.title("Distribution des topics par année")
-
+plt.show()
 
 
 
