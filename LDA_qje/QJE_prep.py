@@ -28,7 +28,7 @@ import datetime as dt
 
 #%%
 #### Prepare speech document : 
-file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/updated_version_6.csv'
+file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/updated_version_8.csv'
 
 df = pd.read_csv(file_path, low_memory=True)
 df.Date = df.Date.astype('datetime64')

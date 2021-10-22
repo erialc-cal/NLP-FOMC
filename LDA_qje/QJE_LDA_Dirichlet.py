@@ -12,20 +12,20 @@ import topicmodels
 
 
 #### Prepare speech document : 
-file_path = '/Users/h2jw/Documents/GitHub/NLP-FOMC/update_version_8.csv'
+file_path = '/Users/h2jw/Documents/GitHub/NLP-FOMC/lem_clean_version_8.csv'
     #file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/LDA_qje/clean_statements.csv'
 df = pd.read_csv(file_path, encoding="utf-8")
-data = df[['chair_in_charge', 'cleaned', 'Date']]
+data = df[['chair_in_charge', 'lemmatized', 'Date']]
 #data = data[data.year >= 1947]
 data.Date = data.Date.astype('datetime64')
 data['year']=data.Date.dt.year
-data['cleaned']=str(data['cleaned'])
+data['lemmatized']=str(data['lemmatized'])
 
 
 #%%
 
 
-docsobj = topicmodels.RawDocs(data.cleaned, "long")
+docsobj = topicmodels.RawDocs(data.lemmatized, "long")
 docsobj.token_clean(1)
 docsobj.stopword_remove("tokens")
 docsobj.stem()
@@ -65,8 +65,8 @@ ldaobj.dict_print()
 # query aggregate documents
 ###############
 
-data['cleaned'] = [' '.join(s) for s in docsobj.stems]
-aggspeeches = data.groupby(['year', 'chair_in_charge'])['cleaned'].\
+data['lemmatized'] = [' '.join(s) for s in docsobj.stems]
+aggspeeches = data.groupby(['year', 'chair_in_charge'])['lemmatized'].\
     apply(lambda x: ' '.join(x))
 aggdocs = topicmodels.RawDocs(aggspeeches)
 
