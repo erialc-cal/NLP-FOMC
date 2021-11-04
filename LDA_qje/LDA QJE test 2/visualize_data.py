@@ -9,7 +9,7 @@ import pandas as pd
 
 # SELECT TEST VISUALIZATION NUMBER
 
-nb = 2
+nb = 4
 
 
 
@@ -33,6 +33,10 @@ query  = pd.read_csv(dt_query)
 dt = f"/Users/h2jw/Documents/GitHub/NLP-FOMC/LDA_qje/LDA QJE test {nb}/dt.csv"
 
 dt_df = pd.read_csv(dt)
+
+tr = f"/Users/h2jw/Documents/GitHub/NLP-FOMC/LDA_qje/LDA QJE test {nb}/tfidf_ranking.csv"
+
+dt_tr = pd.read_csv(tr)
 
 
 df_final = pd.read_csv(f"/Users/h2jw/Documents/GitHub/NLP-FOMC/LDA_qje/LDA QJE test {nb}/final_output_agg.csv")
@@ -65,7 +69,7 @@ import seaborn as sns
 plt.figure(figsize=(20,10))
 sns.heatmap(l_scores,cmap="Purples",annot=l_topics, fmt="")
 plt.title("Topics ")
-plt.show()
+plt.show() 
 
 #%% VISUALS PER CHAIR PER YEAR
 plt.figure()
@@ -73,6 +77,10 @@ df_final2 = df_final.set_index(['chair_in_charge', 'year'])
 sns.heatmap(df_final2)
 plt.title("Distribution des topics par année")
 plt.show()
+
+#%% TFIDF RANK
+dt_tr['score']=dt_tr['49.296371']
+plt.plot(dt_tr.score)
 
 
 
