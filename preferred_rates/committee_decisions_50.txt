@@ -1,0 +1,130 @@
+Burns Era Preference Proﬁles by Meeting
+
+255
+
+February 28, 1978 (99, 63, 43)
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Burns
+
+Coldwell
+
+Jackson
+Mayo
+
+Morris
+
+Partee
+
+Roos
+
+Volcker
+
+Wallich
+
+Guffey
+
+Balles
+
+Baughman
+
+Eastburn
+
+Kimbrel
+
+Willes
+
+Winn
+
+Black
+
+Summary statistics
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+6.750
+
+6.750
+
+6.750
+6.750
+
+6.750
+
+6.750
+
+6.750
+
+6.750
+
+6.750
+
+6.875
+
+6.750
+
+6.750
+
+6.750
+
+6.750
+
+6.750
+
+6.750
+
+6.760 A
+
+10
+
+6.750
+
+6.750
+
+6.793
+
+6.763
+
+6.750
+
+7
+
+6.751
+6.750
+
+17
+
+6.758
+
+6.750
+
+Notes: The numbers 99, 63, and 43 indicate meetings included in samples of these
+sizes, as described in the text; LE, A, LT: Desired funds rate was imputed because the
+member leaned for ease, assented, or leaned for tightness, respectively, relative to the
+staff proposal.
+
+

@@ -1,0 +1,501 @@
+230
+
+Appendix 4
+
+December 17, 1973 (99, 63, 43)
+
+January 21, 1974 (99)
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Bucher
+
+Morris
+
+Sheehan
+Mitchell
+
+Daane
+
+Balles
+
+Brimmer
+
+Burns
+
+Mayo
+
+Holland
+
+Francis
+Hayes
+
+MacLaury
+
+Eastburn
+
+Winn
+
+Black
+
+Clay
+
+Coldwell
+
+Kimbrel
+
+Summary statistics
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+9.000
+
+9.000
+
+9.216 LE
+9.292 LE
+
+9.321 LE
+
+9.374 LE
+
+9.375
+
+9.375
+
+9.625
+
+9.639 A
+
+9.664 A
+10.000
+
+9.250
+
+9.305 LE
+
+9.375
+
+9.436 LE
+
+9.625
+
+9.625
+
+9.625
+
+9.375
+
+9.625
+
+9.933
+
+9.407
+
+9.374
+
+7
+
+9.463
+9.436
+
+12
+
+19
+
+9.427
+
+9.375
+
+Bucher
+
+Morris
+
+Sheehan
+Holland
+
+Mayo
+
+Burns
+
+Mitchell
+
+Daane
+
+Balles
+
+Brimmer
+
+Hayes
+Francis
+
+Black
+
+Coldwell
+
+MacLaury
+
+Eastburn
+
+Kimbrel
+
+Winn
+
+Clay
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+9.000
+
+9.000
+
+9.125
+9.375
+
+9.500
+
+9.701 A
+
+9.736 A
+
+9.738 A
+
+9.750
+
+9.750
+
+9.750
+10.199 LT
+
+9.250
+
+9.375
+
+9.625
+
+9.750
+
+9.750
+
+9.827 A
+
+10.250
+
+12
+
+9.375
+
+9.750
+
+9.719
+
+9.552
+
+9.718
+
+7
+
+9.690
+9.750
+
+19
+
+9.603
+
+9.736
+
+230
+
+Appendix 4
+
+December 17, 1973 (99, 63, 43)
+
+January 21, 1974 (99)
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Bucher
+
+Morris
+
+Sheehan
+Mitchell
+
+Daane
+
+Balles
+
+Brimmer
+
+Burns
+
+Mayo
+
+Holland
+
+Francis
+Hayes
+
+MacLaury
+
+Eastburn
+
+Winn
+
+Black
+
+Clay
+
+Coldwell
+
+Kimbrel
+
+Summary statistics
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+9.000
+
+9.000
+
+9.216 LE
+9.292 LE
+
+9.321 LE
+
+9.374 LE
+
+9.375
+
+9.375
+
+9.625
+
+9.639 A
+
+9.664 A
+10.000
+
+9.250
+
+9.305 LE
+
+9.375
+
+9.436 LE
+
+9.625
+
+9.625
+
+9.625
+
+9.375
+
+9.625
+
+9.933
+
+9.407
+
+9.374
+
+7
+
+9.463
+9.436
+
+12
+
+19
+
+9.427
+
+9.375
+
+Bucher
+
+Morris
+
+Sheehan
+Holland
+
+Mayo
+
+Burns
+
+Mitchell
+
+Daane
+
+Balles
+
+Brimmer
+
+Hayes
+Francis
+
+Black
+
+Coldwell
+
+MacLaury
+
+Eastburn
+
+Kimbrel
+
+Winn
+
+Clay
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+9.000
+
+9.000
+
+9.125
+9.375
+
+9.500
+
+9.701 A
+
+9.736 A
+
+9.738 A
+
+9.750
+
+9.750
+
+9.750
+10.199 LT
+
+9.250
+
+9.375
+
+9.625
+
+9.750
+
+9.750
+
+9.827 A
+
+10.250
+
+12
+
+9.375
+
+9.750
+
+9.719
+
+9.552
+
+9.718
+
+7
+
+9.690
+9.750
+
+19
+
+9.603
+
+9.736
+
+

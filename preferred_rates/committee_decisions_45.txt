@@ -1,0 +1,243 @@
+250
+
+Appendix 4
+
+April 19, 1977 (99, 63, 43)
+
+May 17, 1977 (99, 63, 43)
+
+Individual voters’ desired funds rates
+
+Burns
+
+Coldwell
+
+Morris
+Partee
+
+Roos
+
+Volcker
+
+Lilly
+
+Guffey
+
+Mayo
+
+Gardner
+
+Jackson
+Wallich
+
+Baughman
+
+Black
+
+Eastburn
+
+Willes
+
+Kimbrel
+
+4.750
+
+4.750
+
+4.750
+4.750
+
+4.750
+
+4.750
+
+4.763 A
+
+4.813
+
+4.813
+
+4.869 LT
+
+4.875
+5.000
+
+4.750
+
+4.750
+
+4.750
+
+4.750
+
+4.875
+
+Gardner
+
+Coldwell
+
+Jackson
+Lilly
+
+Partee
+
+Burns
+
+Guffey
+
+Mayo
+
+Volcker
+
+Morris
+
+Roos
+Wallich
+
+Winn
+
+Baughman
+
+Black
+
+Eastburn
+
+Balles
+
+Kimbrel
+
+Willes
+
+Individual alternates’ desired funds rates
+
+Summary statistics
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+12
+
+4.750
+
+4.750
+
+4.701
+
+4.803
+
+4.757
+
+5
+
+4.775
+4.750
+
+17
+
+4.795
+
+4.750
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+5.263 A
+
+5.313
+
+5.313
+5.313
+
+5.313
+
+5.375
+
+5.375
+
+5.375
+
+5.438
+
+5.500
+
+5.625
+5.625
+
+5.313
+
+5.375
+
+5.375
+
+5.375
+
+5.625
+
+5.625
+
+5.375
+
+5.250
+
+5.323
+
+5.402
+
+5.375
+
+7
+
+5.468
+5.375
+
+12
+
+19
+
+5.426
+
+5.375
+
+5.587 LT
+
+

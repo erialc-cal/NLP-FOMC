@@ -1,0 +1,251 @@
+276
+
+Appendix 5
+
+March 31, 1992
+
+May 19, 1992
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Angell
+
+Corrigan
+
+Greenspan
+Hoenig
+
+Jordan
+
+Kelley
+
+LaWare
+
+Lindsey
+
+Melzer
+
+Mullins
+
+Phillips
+Syron
+
+Black
+
+Boehne
+
+Forrestal
+
+Keehn
+
+McTeer
+
+Parry
+
+Stern
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+4.000 BS
+
+4.000 BE
+
+4.000 BE
+4.000 BE
+
+4.000 BS
+
+4.000 BS
+
+4.000 BE
+
+4.000 BE
+
+4.000 BS
+
+4.000 BE
+
+4.000 BE
+4.000 BE
+
+4.000 BE
+
+4.000 BE
+
+4.000 BE
+
+4.000 BE
+
+4.000 BS
+
+4.000 BS
+
+4.000 BS
+
+4.000
+
+BE
+
+12
+
+4.000
+
+4.000
+
+4.000
+
+7
+
+4.000
+4.000
+
+19
+
+4.000
+
+4.000
+
+Angell
+
+Corrigan
+
+Greenspan
+Hoenig
+
+Jordan
+
+Kelley
+
+LaWare
+
+Lindsey
+
+Melzer
+
+Mullins
+
+Phillips
+Syron
+
+Black
+
+Boehne
+
+Forrestal
+
+Keehn
+
+McTeer
+
+Parry
+
+Stern
+
+3.750 BS
+
+3.750 BS
+
+3.750 BS
+3.750 BE
+
+3.750 BS
+
+3.750 BS
+
+3.750 BS
+
+3.750 BE
+
+3.750 BT
+
+3.750 BE
+
+3.750 BE
+3.750 BS
+
+3.750 BS
+
+3.750 BS
+
+3.750 BS
+
+3.750 BE
+
+3.750 BS
+
+3.750 BS
+
+3.750 BS
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+3.750
+
+BS
+
+12
+
+3.750
+
+3.750
+
+3.750
+
+7
+
+3.750
+3.750
+
+19
+
+3.750
+
+3.750
+
+

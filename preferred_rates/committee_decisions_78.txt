@@ -1,0 +1,245 @@
+Greenspan Era Preference Proﬁles by Meeting
+
+283
+
+December 21, 1993
+
+February 2, 1994
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+McDonough
+
+Boehne
+
+Greenspan
+
+Keehn
+Kelley
+
+LaWare
+
+Mullins
+
+Stern
+
+Lindsey
+
+McTeer
+
+Angell
+Phillips
+
+Forrestal
+
+Jordan
+
+Parry
+
+Syron
+
+Broaddus
+
+Melzer
+
+Hoenig
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+3.000 BS
+
+3.000 BS
+
+3.000 BS
+3.000 BS
+
+3.000 BS
+
+3.000 BS
+
+3.000 BS
+
+3.000 BS
+
+3.250
+
+3.378 LT
+
+3.500
+3.526 LT
+
+3.000 BS
+
+3.000 BS
+
+3.000 BT
+
+3.000 BS
+
+3.250
+
+3.338 LT
+
+3.411 LT
+
+3.000
+
+BS
+
+12
+
+3.000
+
+3.138
+
+3.000
+
+7
+
+3.143
+3.000
+
+19
+
+3.138
+
+3.000
+
+Forrestal
+
+Greenspan
+
+Kelley
+McDonough
+
+Broaddus
+
+Jordan
+
+LaWare
+
+Lindsey
+
+Parry
+
+Phillips
+
+Boehne
+
+Keehn
+
+Syron
+
+Hoenig
+
+McTeer
+
+Melzer
+
+Stern
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+3.250 BS
+
+3.250 BS
+
+3.500 BS
+
+3.250
+3.250
+
+3.500
+
+3.500
+
+3.500
+
+3.500
+
+3.500
+
+3.250 BS
+
+3.250 BS
+
+3.250
+
+3.500
+
+3.500
+
+3.500
+
+3.500
+
+3.250
+
+BS
+
+10
+
+3.000
+
+3.400
+
+3.500
+
+7
+
+3.393
+3.500
+
+17
+
+3.400
+
+3.500
+
+

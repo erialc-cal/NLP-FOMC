@@ -1,0 +1,251 @@
+Greenspan Era Preference Proﬁles by Meeting
+
+275
+
+December 17, 1991
+
+February 5, 1992
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Phillips
+
+Keehn
+
+Angell
+Black
+
+Corrigan
+
+Forrestal
+
+Greenspan
+
+Kelley
+
+LaWare
+
+Lindsey
+
+Mullins
+Parry
+
+Boehne
+
+McTeer
+
+Syron
+
+Hoenig
+
+Melzer
+
+Stern
+
+Hendricks
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+3.893 LE
+
+4.000
+
+4.500 BE
+4.500 BE
+
+4.500 BE
+
+4.500 BE
+
+4.500 BE
+
+4.500 BE
+
+4.500 BS
+
+4.500 BE
+
+4.500 BE
+4.500 BE
+
+4.000
+
+4.000
+
+4.000
+
+4.500 BS
+
+4.500 BE
+
+4.500 BS
+
+4.500 BE
+
+4.500
+
+BE
+
+12
+
+4.500
+
+4.408
+
+4.500
+
+7
+
+4.286
+4.500
+
+19
+
+4.363
+
+4.500
+
+Syron
+
+Angell
+
+Corrigan
+Greenspan
+
+Hendricks
+
+Hoenig
+
+Kelley
+
+LaWare
+
+Lindsey
+
+Melzer
+
+Mullins
+Phillips
+
+Black
+
+Boehne
+
+Forrestal
+
+Keehn
+
+McTeer
+
+Parry
+
+Stern
+
+3.850 LE
+
+4.000 BE
+
+4.000 BE
+4.000 BE
+
+4.000 BT
+
+4.000 BE
+
+4.000 BE
+
+4.000 BS
+
+4.000 BE
+
+4.000 BS
+
+4.000 BE
+4.000 BE
+
+4.000 BE
+
+4.000 BE
+
+4.000 BE
+
+4.000 BE
+
+4.000 BE
+
+4.000 BE
+
+4.000 BE
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+4.000
+
+BE
+
+12
+
+4.000
+
+3.988
+
+4.000
+
+7
+
+4.000
+4.000
+
+19
+
+3.992
+
+4.000
+
+

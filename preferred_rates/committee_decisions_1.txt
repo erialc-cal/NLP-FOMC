@@ -1,0 +1,501 @@
+206
+
+Appendix 4
+
+February 10, 1970 (99)
+
+March 10, 1970 (99)
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Maisel
+
+Mitchell
+
+Sherrill
+Daane
+
+Burns
+
+Bopp
+
+Brimmer
+
+Clay
+
+Hayes
+
+Robertson
+
+Scanlon
+Coldwell
+
+Hickman
+
+Black
+
+Morris
+
+Galusha
+
+Francis
+
+Kimbrel
+
+Swan
+
+Summary statistics
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+8.125
+
+8.500
+
+8.500
+8.542 A
+
+8.564 A
+
+9.000
+
+9.000
+
+9.000
+
+9.000
+
+9.000
+
+9.000
+9.125
+
+8.000
+
+8.328 LE
+
+8.497 A
+
+8.498 A
+
+9.000
+
+9.000
+
+9.000
+
+8.500
+
+8.500
+
+9.143
+
+8.780
+
+9.000
+
+7
+
+8.618
+8.498
+
+12
+
+19
+
+8.720
+
+9.000
+
+Daane
+
+Swan
+
+Burns
+Hickman
+
+Robertson
+
+Brimmer
+
+Hayes
+
+Heﬂin
+
+Kimbrel
+
+Maisel
+
+Mitchell
+Sherrill
+
+Galusha
+
+Morris
+
+Baughman
+
+Clay
+
+Coldwell
+
+Eastburn
+
+Lewis
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+7.500
+
+7.500
+
+7.702 A
+7.735 A
+
+7.794 A
+
+8.250
+
+8.250
+
+8.250
+
+8.250
+
+8.250
+
+8.250
+8.250
+
+7.500
+
+7.500
+
+7.732 A
+
+8.250
+
+8.250
+
+8.250
+
+8.250
+
+8.250
+
+7.750
+
+7.857
+
+7.998
+
+8.250
+
+7
+
+7.962
+8.250
+
+12
+
+19
+
+7.985
+
+8.250
+
+206
+
+Appendix 4
+
+February 10, 1970 (99)
+
+March 10, 1970 (99)
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Maisel
+
+Mitchell
+
+Sherrill
+Daane
+
+Burns
+
+Bopp
+
+Brimmer
+
+Clay
+
+Hayes
+
+Robertson
+
+Scanlon
+Coldwell
+
+Hickman
+
+Black
+
+Morris
+
+Galusha
+
+Francis
+
+Kimbrel
+
+Swan
+
+Summary statistics
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+8.125
+
+8.500
+
+8.500
+8.542 A
+
+8.564 A
+
+9.000
+
+9.000
+
+9.000
+
+9.000
+
+9.000
+
+9.000
+9.125
+
+8.000
+
+8.328 LE
+
+8.497 A
+
+8.498 A
+
+9.000
+
+9.000
+
+9.000
+
+8.500
+
+8.500
+
+9.143
+
+8.780
+
+9.000
+
+7
+
+8.618
+8.498
+
+12
+
+19
+
+8.720
+
+9.000
+
+Daane
+
+Swan
+
+Burns
+Hickman
+
+Robertson
+
+Brimmer
+
+Hayes
+
+Heﬂin
+
+Kimbrel
+
+Maisel
+
+Mitchell
+Sherrill
+
+Galusha
+
+Morris
+
+Baughman
+
+Clay
+
+Coldwell
+
+Eastburn
+
+Lewis
+
+Target funds rate
+
+Staff proposal
+
+Premeeting funds rate
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+7.500
+
+7.500
+
+7.702 A
+7.735 A
+
+7.794 A
+
+8.250
+
+8.250
+
+8.250
+
+8.250
+
+8.250
+
+8.250
+8.250
+
+7.500
+
+7.500
+
+7.732 A
+
+8.250
+
+8.250
+
+8.250
+
+8.250
+
+8.250
+
+7.750
+
+7.857
+
+7.998
+
+8.250
+
+7
+
+7.962
+8.250
+
+12
+
+19
+
+7.985
+
+8.250
+
+

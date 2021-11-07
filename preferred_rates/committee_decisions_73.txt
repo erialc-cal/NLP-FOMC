@@ -1,0 +1,251 @@
+278
+
+Appendix 5
+
+October 6, 1992
+
+November 17, 1992
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Phillips
+
+Hoenig
+
+Lindsey
+Syron
+
+Jordan
+
+Angell
+
+Corrigan
+
+Greenspan
+
+Kelley
+
+LaWare
+
+Melzer
+Mullins
+
+Keehn
+
+Forrestal
+
+Black
+
+Parry
+
+Boehne
+
+McTeer
+
+Stern
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+2.500
+
+2.709 LE
+
+2.739 LE
+2.810 LE
+
+2.990 A
+
+3.000 BS
+
+3.000 BE
+
+3.000 BE
+
+3.000 BE
+
+3.000 BS
+
+3.000 BS
+3.000 BE
+
+2.733 LE
+
+2.738 LE
+
+2.750
+
+2.750 BE
+
+2.800 LE
+
+3.000 BS
+
+3.000 BE
+
+3.000
+
+BE
+
+12
+
+3.000
+
+2.896
+
+3.000
+
+7
+
+2.825
+2.750
+
+19
+
+2.869
+
+2.990
+
+Jordan
+
+Phillips
+
+Lindsey
+Syron
+
+Angell
+
+Corrigan
+
+Greenspan
+
+Hoenig
+
+Kelley
+
+LaWare
+
+Melzer
+Mullins
+
+Parry
+
+Black
+
+Boehne
+
+Forrestal
+
+Keehn
+
+McTeer
+
+Stern
+
+2.743 LE
+
+2.759 LE
+
+2.786 LE
+2.843 LE
+
+3.000 BS
+
+3.000 BS
+
+3.000 BE
+
+3.000 BS
+
+3.000 BS
+
+3.000 BS
+
+3.000 BS
+3.000 BE
+
+2.781 LE
+
+3.000 BS
+
+3.000 BS
+
+3.000 BE
+
+3.000 BE
+
+3.000 BS
+
+3.000 BS
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+3.000
+
+BE
+
+12
+
+3.000
+
+2.928
+
+3.000
+
+7
+
+2.969
+3.000
+
+19
+
+2.943
+
+3.000
+
+

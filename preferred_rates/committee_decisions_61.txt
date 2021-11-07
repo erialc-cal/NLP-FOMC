@@ -1,0 +1,247 @@
+266
+
+Appendix 5
+
+October 3, 1989
+
+November 14, 1989
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Seger
+
+Angell
+
+Corrigan
+Greenspan
+
+Guffey
+
+Johnson
+
+Keehn
+
+Kelley
+
+LaWare
+
+Melzer
+
+Syron
+
+Black
+
+Boehne
+
+Boykin
+
+Forrestal
+
+Hoskins
+
+Parry
+
+Stern
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+8.500
+
+9.000 BE
+
+9.000 BS
+9.000 BE
+
+9.000 BS
+
+9.000 BE
+
+9.000 BE
+
+9.000 BE
+
+9.000 BS
+
+9.000 BS
+
+9.000 BS
+
+9.000 BE
+
+9.000 BE
+
+9.000 BS
+
+9.000 BS
+
+9.000 BT
+
+9.000 BS
+
+9.000 BS
+
+9.000
+
+BE
+
+11
+
+9.000
+
+8.955
+
+9.000
+
+7
+
+9.000
+9.000
+
+18
+
+8.972
+
+9.000
+
+Seger
+
+Angell
+
+Corrigan
+Greenspan
+
+Guffey
+
+Johnson
+
+Keehn
+
+Kelley
+
+LaWare
+
+Melzer
+
+Syron
+
+Black
+
+Boehne
+
+Boykin
+
+Forrestal
+
+Hoskins
+
+Parry
+
+Stern
+
+8.000
+
+8.500 BS
+
+8.500 BE
+8.500 BE
+
+8.500 BS
+
+8.500 BE
+
+8.500 BE
+
+8.500 BE
+
+8.500 BE
+
+8.500 BS
+
+8.500 BE
+
+8.500 BE
+
+8.500 BE
+
+8.500 BS
+
+8.500 BE
+
+8.500 BS
+
+8.500 BS
+
+8.500 BE
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+8.500
+
+BE
+
+11
+
+8.500
+
+8.455
+
+8.500
+
+7
+
+8.500
+8.500
+
+18
+
+8.472
+
+8.500
+
+

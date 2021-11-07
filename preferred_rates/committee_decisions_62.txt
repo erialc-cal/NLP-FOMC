@@ -1,0 +1,247 @@
+Greenspan Era Preference Proﬁles by Meeting
+
+267
+
+December 18, 1989
+
+February 2, 1990
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Seger
+
+Corrigan
+
+Greenspan
+Johnson
+
+Keehn
+
+Kelley
+
+Syron
+
+Angell
+
+Guffey
+
+LaWare
+
+Melzer
+
+Boykin
+
+Forrestal
+
+Black
+
+Boehne
+
+Parry
+
+Stern
+
+Hoskins
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+8.000
+
+8.250 BS
+
+8.250 BS
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.500
+
+8.500 BE
+
+8.500 BE
+
+8.500 BE
+
+8.250 BS
+
+8.250 BS
+
+8.500
+
+8.500 BE
+
+8.500 BS
+
+8.500 BE
+
+9.000
+
+8.250
+
+BS
+
+11
+
+8.500
+
+8.318
+
+8.250
+
+7
+
+8.500
+8.500
+
+18
+
+8.389
+
+8.375
+
+Seger
+
+Angell
+
+Boehne
+Corrigan
+
+Greenspan
+
+Johnson
+
+Kelley
+
+LaWare
+
+Stern
+
+Boykin
+
+Hoskins
+
+Black
+
+Forrestal
+
+Guffey
+
+Keehn
+
+Melzer
+
+Parry
+
+Syron
+
+7.750
+
+8.250 BS
+
+8.250 BS
+8.250 BS
+
+8.250
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.363 LT
+
+8.750
+
+8.250
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+8.250
+
+BS
+
+11
+
+8.250
+
+8.260
+
+8.250
+
+7
+
+8.250
+8.250
+
+18
+
+8.256
+
+8.250
+
+

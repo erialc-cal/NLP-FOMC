@@ -1,0 +1,239 @@
+274
+
+Appendix 5
+
+October 1, 1991
+
+November 5, 1991
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Angell
+
+Black
+
+Corrigan
+Forrestal
+
+Greenspan
+
+Keehn
+
+Kelley
+
+LaWare
+
+Mullins
+
+Parry
+
+Hendricks
+
+Boehne
+
+Hoenig
+
+McTeer
+
+Melzer
+
+Stern
+
+Syron
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+5.250 BS
+
+5.250 BE
+
+5.250 BE
+5.250 BE
+
+5.250 BE
+
+5.250 BE
+
+5.250 BE
+
+5.250 BS
+
+5.250 BE
+
+5.250 BS
+
+5.018 LE
+
+5.250 BE
+
+5.250 BS
+
+5.250 BE
+
+5.250 BS
+
+5.250 BE
+
+5.250 BE
+
+5.250
+
+BE
+
+10
+
+5.250
+
+5.250
+
+5.250
+
+7
+
+5.217
+5.250
+
+17
+
+5.236
+
+5.250
+
+Corrigan
+
+Forrestal
+
+Greenspan
+Keehn
+
+LaWare
+
+Mullins
+
+Parry
+
+Angell
+
+Black
+
+Kelley
+
+Boehne
+
+Hendricks
+
+McTeer
+
+Stern
+
+Syron
+
+Hoenig
+
+Melzer
+
+4.750
+
+4.750 BE
+
+4.750
+4.750 BE
+
+4.750 BS
+
+4.750 BE
+
+4.750 BE
+
+5.000 BE
+
+5.000 BE
+
+5.000 BE
+
+4.750 BE
+
+4.750 BS
+
+4.750 BS
+
+4.750
+
+4.750 BE
+
+5.000 BE
+
+5.000
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+4.750
+
+BE
+
+10
+
+5.000
+
+4.825
+
+4.750
+
+7
+
+4.821
+4.750
+
+17
+
+4.824
+
+4.750
+
+

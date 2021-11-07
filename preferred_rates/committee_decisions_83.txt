@@ -1,0 +1,247 @@
+288
+
+Appendix 5
+
+March 28, 1995
+
+May 23, 1995
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Blinder
+
+Greenspan
+
+Hoenig
+Kelley
+
+Lindsey
+
+McDonough
+
+Melzer
+
+Moskow
+
+Phillips
+
+Yellen
+
+Minehan
+
+Boehne
+
+Broaddus
+
+Forrestal
+
+Jordan
+
+McTeer
+
+Stern
+
+Parry
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+6.000
+
+6.000 BT
+
+6.000 BT
+6.000 BT
+
+6.000 BS
+
+6.000 BT
+
+6.000 BT
+
+6.000 BT
+
+6.000 BT
+
+6.000 BS
+
+6.187 LT
+
+6.000 BT
+
+6.000 BT
+
+6.000 BS
+
+6.000 BT
+
+6.000 BT
+
+6.000 BS
+
+6.252 LT
+
+6.000
+
+BT
+
+11
+
+6.000
+
+6.017
+
+6.000
+
+7
+
+6.036
+6.000
+
+18
+
+6.017
+
+6.000
+
+Blinder
+
+Greenspan
+
+Hoenig
+Kelley
+
+Lindsey
+
+McDonough
+
+Melzer
+
+Minehan
+
+Moskow
+
+Phillips
+
+Yellen
+
+Boehne
+
+Broaddus
+
+Forrestal
+
+Jordan
+
+McTeer
+
+Parry
+
+Stern
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+6.000 BS
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+6.000
+
+BS
+
+11
+
+6.000
+
+6.000
+
+6.000
+
+7
+
+6.000
+6.000
+
+18
+
+6.000
+
+6.000
+
+

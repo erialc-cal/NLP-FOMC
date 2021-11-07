@@ -1,0 +1,251 @@
+262
+
+Appendix 5
+
+September 20, 1988
+
+November 1, 1988
+
+Individual voters’ desired funds rates
+
+Angell
+
+Black
+
+Corrigan
+Forrestal
+
+Greenspan
+
+Heller
+
+Johnson
+
+Kelley
+
+LaWare
+
+Parry
+
+Seger
+Hoskins
+
+Boehne
+
+Boykin
+
+Guffey
+
+Melzer
+
+Morris
+
+Stern
+
+Keehn
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+8.296 BT A
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.270 BT LT
+
+Angell
+
+Black
+
+Corrigan
+Forrestal
+
+Greenspan
+
+Heller
+
+Johnson
+
+Kelley
+
+LaWare
+
+Parry
+
+Seger
+Hoskins
+
+Boehne
+
+Boykin
+
+Guffey
+
+Melzer
+
+Morris
+
+Stern
+
+Keehn
+
+Individual alternates’ desired funds rates
+
+8.125 BS
+
+8.125 BT
+
+8.125 BT
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.125
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.125 BS
+8.316 A
+
+8.125 BT
+
+8.125 BT
+
+8.125 BS
+
+8.125 BT
+
+8.125 BT
+
+8.125 BT
+
+8.188 BS
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+8.125
+
+BT
+
+12
+
+8.125
+
+8.139
+
+8.125
+
+7
+
+8.146
+8.125
+
+19
+
+8.142
+
+8.125
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+8.125
+
+BT
+
+12
+
+8.125
+
+8.141
+
+8.125
+
+7
+
+8.134
+8.125
+
+19
+
+8.138
+
+8.125
+
+

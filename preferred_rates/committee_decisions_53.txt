@@ -1,0 +1,247 @@
+258
+
+Appendix 5
+
+August 18, 1987
+
+September 22, 1987
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Angell
+
+Boehne
+
+Boykin
+Heller
+
+Johnson
+
+Kelley
+
+Seger
+
+Corrigan
+
+Greenspan
+
+Keehn
+
+Stern
+
+Black
+
+Guffey
+
+Melzer
+
+Forrestal
+
+Hendricks
+
+Morris
+
+Parry
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+6.625 BS
+
+6.625 BT
+
+6.625 BT
+6.625
+
+6.625 BT
+
+6.625 BT
+
+6.625 BS
+
+6.875 BT
+
+6.875
+
+6.875 BT
+
+6.875
+
+6.625 BT
+
+6.625
+
+6.625 BT
+
+6.875 BT
+
+6.875
+
+6.875 BT
+
+7.125
+
+6.625
+
+BT
+
+11
+
+6.625
+
+6.716
+
+6.625
+
+7
+
+6.804
+6.875
+
+18
+
+6.750
+
+6.625
+
+Heller
+
+Seger
+
+Angell
+Boehne
+
+Boykin
+
+Corrigan
+
+Greenspan
+
+Johnson
+
+Keehn
+
+Kelley
+
+Stern
+
+Guffey
+
+Forrestal
+
+Melzer
+
+Black
+
+Eisenmenger
+
+Hendricks
+
+Parry
+
+7.063
+
+7.063 BS
+
+7.313 BS
+7.313 BS
+
+7.313 BS
+
+7.313 BS
+
+7.313 BS
+
+7.313 BS
+
+7.313 BT
+
+7.313 BS
+
+7.313 BT
+
+7.063
+
+7.188 BT
+
+7.188 BS
+
+7.313 BT
+
+7.313
+
+7.313 BT
+
+7.813
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+7.313
+
+BS
+
+11
+
+7.313
+
+7.267
+
+7.313
+
+7
+
+7.313
+7.313
+
+18
+
+7.285
+
+7.313
+
+

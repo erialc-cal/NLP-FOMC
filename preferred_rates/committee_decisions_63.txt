@@ -1,0 +1,247 @@
+268
+
+Appendix 5
+
+March 27, 1990
+
+May 15, 1990
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Angell
+
+Boehne
+
+Corrigan
+Greenspan
+
+Johnson
+
+Kelley
+
+LaWare
+
+Seger
+
+Stern
+
+Boykin
+
+Hoskins
+
+Forrestal
+
+Guffey
+
+Keehn
+
+Melzer
+
+Syron
+
+Black
+
+Parry
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+8.250 BS
+
+8.250 BT
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.400 LT
+
+8.500
+
+8.250 BS
+
+8.250 BT
+
+8.250 BS
+
+8.250 BT
+
+8.250 BT
+
+8.445 LT
+
+8.555 LT
+
+8.250
+
+BS
+
+11
+
+8.250
+
+8.286
+
+8.250
+
+7
+
+8.321
+8.250
+
+18
+
+8.300
+
+8.250
+
+Angell
+
+Boehne
+
+Boykin
+Corrigan
+
+Greenspan
+
+Johnson
+
+Kelley
+
+LaWare
+
+Seger
+
+Stern
+
+Hoskins
+
+Black
+
+Forrestal
+
+Guffey
+
+Keehn
+
+Melzer
+
+Parry
+
+Syron
+
+8.250 BT
+
+8.250 BS
+
+8.250 BT
+8.250
+
+8.250 BS
+
+8.250 BT
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.250 BS
+
+8.750
+
+8.250 BT
+
+8.250 BT
+
+8.250 BT
+
+8.250 BS
+
+8.250
+
+8.250 BS
+
+8.250 BT
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+8.250
+
+BS
+
+11
+
+8.250
+
+8.295
+
+8.250
+
+7
+
+8.250
+8.250
+
+18
+
+8.278
+
+8.250
+
+

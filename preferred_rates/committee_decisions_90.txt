@@ -1,0 +1,143 @@
+Greenspan Era Preference Proﬁles by Meeting
+
+295
+
+December 17, 1996
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Boehne
+
+Greenspan
+
+Jordan
+Kelley
+
+Lindsey
+
+McDonough
+
+McTeer
+
+Meyer
+
+Phillips
+
+Rivlin
+
+Stern
+Yellen
+
+Guynn
+
+Hoenig
+
+Minehan
+
+Moskow
+
+Parry
+
+Melzer
+
+Broaddus
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+5.250 BT
+
+5.250 BT
+
+5.250
+5.250 BT
+
+5.250 BT
+
+5.250 BT
+
+5.250 BT
+
+5.250 BT
+
+5.250 BT
+
+5.250 BT
+
+5.250 BT
+5.250 BT
+
+5.250 BT
+
+5.250 BT
+
+5.250 BT
+
+5.250 BT
+
+5.250 BT
+
+5.591 LT
+
+5.627 LT
+
+5.250
+
+BT
+
+12
+
+5.250
+
+5.250
+
+5.250
+
+7
+
+5.353
+5.250
+
+19
+
+5.250
+
+5.250
+
+Notes: BE, BS, BT: Bias toward ease, symmetric bias, or bias toward tightness, respec-
+tively; LE, A, LT: Desired funds rate was imputed and the member leaned for ease,
+assented, or leaned for tightness, respectively, relative to the status quo, unless otherwise
+noted.
+a Lean is relative to funds rate of 8.9375.
+c Lean is relative to funds rate of 7.50.
+e Lean is relative to funds rate of 5.75.
+
+b Lean is relative to funds rate of 7.75.
+d Lean is relative to funds rate of 3.50.
+f Lean is relative to funds rate of 5.50.
+
+

@@ -1,0 +1,251 @@
+286
+
+Appendix 5
+
+September 27, 1994
+
+November 15, 1994
+
+Individual voters’ desired funds rates
+
+Individual alternates’ desired funds rates
+
+Blinder
+
+Forrestal
+
+Greenspan
+Jordan
+
+Kelley
+
+LaWare
+
+Lindsey
+
+McDonough
+
+Parry
+
+Phillips
+
+Yellen
+Broaddus
+
+Boehne
+
+Hoenig
+
+McTeer
+
+Minehan
+
+Moskow
+
+Melzer
+
+Stern
+
+Summary statistics
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+4.750 BT
+
+4.750 BT
+
+4.750 BT
+4.750 BS
+
+4.750 BT
+
+4.750 BT
+
+4.750 BT
+
+4.750 BT
+
+4.750 BT
+
+4.750 BT
+
+4.750 BT
+5.250
+
+4.750 BT
+
+4.750 BT
+
+4.750 BS
+
+4.750 BT
+
+4.750 BT
+
+5.250
+
+5.250
+
+4.750
+
+BT
+
+12
+
+4.750
+
+4.792
+
+4.750
+
+7
+
+4.893
+4.750
+
+19
+
+4.792
+
+4.750
+
+McDonough
+
+Blinder
+
+Yellen
+
+Broaddus
+Forrestal
+
+Greenspan
+
+Jordan
+
+Kelley
+
+LaWare
+
+Lindsey
+
+Parry
+Phillips
+
+Boehne
+
+Hoenig
+
+McTeer
+
+Melzer
+
+Minehan
+
+Moskow
+
+Stern
+
+5.250
+
+5.250
+
+5.500
+5.500
+
+5.500 BS
+
+5.500 BS
+
+5.500 BS
+
+5.500 BS
+
+5.500 BS
+
+5.500 BS
+
+5.500 BT
+5.500 BS
+
+5.250
+
+5.500 BS
+
+5.500
+
+5.500 BS
+
+5.500 BS
+
+5.500 BS
+
+5.500
+
+Target funds rate
+
+Committee bias
+
+Status quo
+
+Number (voters)
+
+Mean (voters)
+
+Median (voters)
+
+Number (alternates)
+
+Mean (alternates)
+Median (alternates)
+
+Number (all)
+
+Mean (all)
+
+Median (all)
+
+5.500
+
+BS
+
+12
+
+4.750
+
+5.458
+
+5.500
+
+7
+
+5.464
+5.500
+
+19
+
+5.458
+
+5.500
+
+
