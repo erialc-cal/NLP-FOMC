@@ -71,12 +71,12 @@ def convert_pdf_to_string(file_path):
 
 	return(output_string.getvalue())
 
-txt = convert_pdf_to_string(project_directory+'/committee_decisions.pdf')
+# txt = convert_pdf_to_string(project_directory+'/committee_decisions.pdf')
 
             
-txtfile = open(project_directory+'/committee_decisions_raw.txt',"a")
-txtfile.writelines(txt)  
-#%%
+# txtfile = open(project_directory+'/committee_decisions_raw.txt',"a")
+# txtfile.writelines(txt)  
+
 
 
 #%% 
@@ -139,20 +139,51 @@ while idx < len(split_text):
 
 ### UNE ERREUR DE SCRAPPING ARRIVE : LORSQUE LE TEXTE EST MAL ALIGNE, UN RATE EST ENREGISTRE 
 # AU MILIEU DES NOMS. ON LE RECUPERE CAR C'EST LE PREMIER RATE A LA MAIN POUR FAIRE LA CORRECTION. 
-   
+
+
+#%% ADD CORRESPONDING NAMES TO NUMBER
+import pandas as pd
+
+tab = pd.read_excel(project_directory+'/MemberNumbers.xls', header=None, index_col=1).to_dict()[0]
+
 
  #%%    GET RATES
- 
- 
+  
 def get_numbers(text, stop):
     rate_list=[]
     bias_list= []
-    for elem in text:
-        if elem == "Median all":
-            idx 
+    for elem in text[1:stop+1]:
+        if len(elem.split(' '))==2:
+            r, b = elem.split()
+        else :
+            r, b = elem, ' '
+        rate_list.append(r)
+        bias_list.append(b)
+    return rate_list, bias_list
+idx,i=0,0
+rates, bias = [],[]
+
+for i in trange(len(stops)): 
+    while idx < len(split_text):
+        elem = split_text[idx]
+        if elem == "Median all" :
+            start = idx
+            rate_list, bias_list = get_numbers(split_text[start:], stops[i])
+         #   rate_list, bias_list = get_numbers(split_text, len(name_list))
+         #print(stops[i], i)
+            idx += len(rate_list)+1
+            rates.append(rate_list)
+            bias.append(bias_list)
+ 
+        else : 
+            idx+=1
+
             
-            
-    
+       #%% CREATING DATAFRAME
+import pandas as pd  
+ 
+df = pd.DataFrame({'rates': rates, 'bias': bias, 'dates':date})
+ 
     
 #%% USING A COMBINATION TO GET EVERY PAGE
 
@@ -183,4 +214,101 @@ def pdf_per_page_to_txt(file_path):
         retstr.truncate(0)
         txtfile = open(project_directory+f'/committee_decisions_{i}.txt',"a")
         txtfile.writelines(text)  
+
+
+
+#%%
+import numpy as np
+# SCRAPPING NAMES, RATES AND BIAS ONLY USING PAGES
+string_text = ""
+preferred = []
+bias = []
+name_list = []
+dates = []
+len_names = []
+
+for i in trange(90):
+    #we have 88 reunions, but 3 documents are empty as they are titles
+    try: 
+        with open(project_directory+f'/committee_decisions_{i}.txt', 'r') as doc:
+             l = list(filter(None,doc.read().splitlines()))
+             l = [x for x in l if "Preference" not in x]
+    except:
+        l = ['Median (all)'] 
+
+
+    # get date 
+    
+    date = get_dates(l)
+    # get names
+    names = []
+    rates = []
+    for elem in l:
+        if elem in tab.keys():
+            names.append(elem)
+            name_list.append(elem)
+            
+        
+    try :
+        s1 = l.index(names[0])
+        s2 = l[s1+1:].index(names[0])
+      #  print(s1, s2)
+        
+    except :
+        pass
+
+    if s2/len(l) < 0.75 and s2/len(l) > 0.4 :
+        # get first column stats 
+        start = l.index('Median (all)')+1
+        for elem in l[start:start+len(names)//2]:
+            rates.append(elem)
+        
+        # 13 different statistics we want to skip 
+    
+        # get second column stats
+        # start of second batch of stats Median (all) + nb of names + 12 til end -12
+    
+        for elem in l[start+len(names)+12:-2*12]:
+            rates.append(elem)
+            
+            
+    elif s1/len(l) > 0.20 :
+        # get first column stats 
+        start = 3
+        for elem in l[start+len(names)//2:start+len(names)]:
+            rates.append(elem)
+        
+        # 13 different statistics we want to skip 
+    
+        # get second column stats
+        # start of second batch of stats Median (all) + nb of names + 12 til end -12
+    
+        for elem in l[start+len(names)+len(names)//2+2*12+1:-2*12-2]:
+            rates.append(elem)
+
+    for r in rates :
+        if len(r.split()) > 1:
+           # print(r.split())
+            try :
+                rt, b = r.split()
+            except:
+                pass
+        else :
+            rt, b = r, ''
+        preferred.append(rt)
+        bias.append(b)
+        
+    #print(len(rt), len(b), len(names))
+    # multiply the date by the number of entries 
+    dates.append(date)
+    len_names.append(len(names))
+#### FACING A BIG PROBLEM SCRAPING OF DATA IS NOT COHERENT OF GEOMETRY OF THE TABLES 
+
+
+
+
+
+
+
+
 
