@@ -45,7 +45,7 @@ if run_script:
 #%%
 
 n_samples = len(df)
-n_features = len(df)
+n_features = 3000
 n_components = 30
 n_top_words = 100
 ####################################
@@ -120,7 +120,7 @@ def plot_topic_per_chair(data, all_topic, topic, chair, verbose=False, n_compone
     print(select_topic,top_features_ind, np.sum(select_topic, axis=0))
     if verbose : 
         a = len(topic)//5
-        fig, axes = plt.subplots(a, 5, figsize=(20, 8), sharex=True)
+        fig, axes = plt.subplots(len(topic), figsize=(20, 8), sharex=True)
         axes = axes.flatten()
         for i in range(len(topic)):
             ax = axes[i]
@@ -185,4 +185,38 @@ plt.title('LDA sur les transcripts de 1976 à 2015, toutes chairs confondues \n 
 plt.show()
 
 #%%
+## GET INFO PER CHAIR
 
+chairs = pd.unique(df.chair_in_charge)
+for chair in chairs:
+    data= df[df.chair_in_charge==chair].statement.dropna().to_list()
+    doc_topic, top_features, weights = LDA_topics(data, len(data),n_components, n_features, n_top_words)
+    
+    # if saveFlag :
+    #     top_f,w = [],[]
+    #     for features in top_features:
+    #         for words in features :
+    #             top_f.append(words)
+    #     for topic in weights :
+    #         for weight in topic:
+    #             w.append(weight)
+            
+    #     df_topics = pd.DataFrame()
+    #     df_topics['features']=top_f
+    #     df_topics['weights']=w
+    #     df_topics['topic']= np.repeat([i+1 for i in range(n_components)], n_top_words)
+    #     df_topics.to_csv(f'df_{n_components}_{n_top_words}_{chair}.csv')
+        
+    trunc_weights = []
+    for elem in weights:
+        trunc_weights.append(elem[:12])
+        
+    trunc_labels=[]
+    for elem in top_features:
+        trunc_labels.append(elem[:12])
+        
+    plt.figure(figsize=(20,12))
+    sns.heatmap(trunc_weights, annot=trunc_labels, fmt='',cmap='Blues')
+    plt.title(f'LDA sur les transcripts de 1976 à 2015, {chair} \n 30 topics, 100 mots clés')
+    plt.savefig(f'{chair}_30_100.png')
+    plt.show()
