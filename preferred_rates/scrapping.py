@@ -432,6 +432,10 @@ for date in df['ym']:
 
 df['Time']=time_list
 
+
+#%% GET corrected rates 
+df2 = df[['preferred', 'bias', 'member', 'Time']]
+df3 = df2[~df2.preferred.apply(lambda x: x.isdigit() or x.isalpha())]
 #%%
 
 import matplotlib.pyplot as plt

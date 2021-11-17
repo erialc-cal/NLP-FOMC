@@ -30,9 +30,9 @@ if run_script:
     stop.extend(['mr','re', 's', 'it', 'ex', 'in', 'he', 'and', 'there', 'however', 'to', 'now', 'to', 'of', 'the', 
                  'they', 'but', 'soon', 'film', 'that', 'who', 'of', 'oh','youre','like','dont', 'yes', 'thats', 'im', 'think', 'thank'])
     
-    df = pd.read_csv("/Users/h2jw/Documents/GitHub/NLP-FOMC/RA_project/final_df_v4.csv", low_memory=True)
+    df = pd.read_csv("/Users/h2jw/Documents/GitHub/NLP-FOMC/lem_clean_version_8.csv", low_memory=True)
     df.statement = df.statement.fillna('')
-    df = df.drop(columns = ['Unnamed: 0','Unnamed: 0.1','Unnamed: 0.1.1','Unnamed: 0.1.1.1' ])
+    df = df.drop(columns = ['Unnamed: 0']) #,'Unnamed: 0.1','Unnamed: 0.1.1','Unnamed: 0.1.1.1' ])
     df['statement'] = df['statement'].str.replace('[^\w\s]','') # remove punctuation
     df["statement"] = df["statement"].str.lower().str.split() # get words with lowercase 
     df['statement'] = df['statement'].apply(lambda x: [item for item in x if item not in stop]) # remove stopwords
@@ -40,12 +40,14 @@ if run_script:
     df['statement'] = df['statement'].str.replace('[^\w\s]','')
     #set data
     data = df.statement.dropna().to_list()
-
+    
+    
+#%%
 
 n_samples = len(df)
-n_features = 1000
-n_components = 5
-n_top_words = 10
+n_features = len(df)
+n_components = 30
+n_top_words = 100
 ####################################
 
 #%%
@@ -151,6 +153,7 @@ def plot_topic_ratio(data, all_topic, topic, n_components=5, n_top_words=10):
 #%%
 
 plot_topic_ratio(df, doc_topic, top_features)
+plot_topic_per_chair(df, doc_topic, top_features)
 
 # df_per_chair['chair_in_charge']= np.repeat(chair, len(topic))
 # df_per_chair['topic']= np.tile([i for i in range(len(topic))], len(chair))
@@ -166,8 +169,20 @@ plot_topic_ratio(df, doc_topic, top_features)
 
 
 
+import seaborn as sns
+#show 12 most used words
+trunc_weights = []
+for elem in weights:
+    trunc_weights.append(elem[:12])
+    
+trunc_labels=[]
+for elem in top_features:
+    trunc_labels.append(elem[:12])
+    
+plt.figure(figsize=(20,12))
+sns.heatmap(trunc_weights, annot=trunc_labels, fmt='',cmap='Blues')
+plt.title('LDA sur les transcripts de 1976 à 2015, toutes chairs confondues \n 30 topics, 100 mots clés, corpus de 156 082 mots')
+plt.show()
 
-
-
-
+#%%
 
