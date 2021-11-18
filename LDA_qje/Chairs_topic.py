@@ -50,7 +50,9 @@ n_components = 30
 n_top_words = 100
 ####################################
 
-#%%
+#%% ### CORPUS ANALYSIS 
+
+
 def LDA_topics(data, n_samples, n_components, n_features, n_top_words):
         # Use tf (raw term count) features for LDA.
     data_samples = data[:n_samples]   
@@ -84,12 +86,32 @@ def LDA_topics(data, n_samples, n_components, n_features, n_top_words):
         weights.append(topic[top_features_ind])
     return doc_topic, top_features, weights
 
+
+    
+import seaborn as sns
+#show 12 most used words
+
+def plot_heatmap_corpus(weights, top_features):
+    trunc_weights = []
+    for elem in weights:
+        trunc_weights.append(elem[:12])
+        
+    trunc_labels=[]
+    for elem in top_features:
+        trunc_labels.append(elem[:12])
+        
+    plt.figure(figsize=(20,12))
+    sns.heatmap(trunc_weights, annot=trunc_labels, fmt='',cmap='Blues')
+    plt.title('LDA sur les transcripts de 1976 à 2015, toutes chairs confondues \n 30 topics, 100 mots clés, corpus de 156 082 mots')
+    plt.show()
+    
+
 #%% ######### MODELING AND SAVING DATA
 
 if run_script:
     doc_topic, top_features, weights = LDA_topics(data, n_samples, n_components, n_features, n_top_words)
 
-
+#%%
 if saveFlag :
     top_f,w = [],[]
     for features in top_features:
@@ -150,6 +172,88 @@ def plot_topic_ratio(data, all_topic, topic, n_components=5, n_top_words=10):
         ax[i].set_title(f'{chair_l[i]}')
     plt.show()
 
+
+## GET INFO PER CHAIR
+def plot_heatmap_chair(df, n_components, n_features, n_top_words):
+    chairs = pd.unique(df.chair_in_charge)
+    for chair in chairs:
+        data= df[df.chair_in_charge==chair].statement.dropna().to_list()
+        doc_topic, top_features, weights = LDA_topics(data, len(data),n_components, n_features, n_top_words)
+        
+        # if saveFlag :
+        #     top_f,w = [],[]
+        #     for features in top_features:
+        #         for words in features :
+        #             top_f.append(words)
+        #     for topic in weights :
+        #         for weight in topic:
+        #             w.append(weight)
+                
+        #     df_topics = pd.DataFrame()
+        #     df_topics['features']=top_f
+        #     df_topics['weights']=w
+        #     df_topics['topic']= np.repeat([i+1 for i in range(n_components)], n_top_words)
+        #     df_topics.to_csv(f'df_{n_components}_{n_top_words}_{chair}.csv')
+            
+        trunc_weights = []
+        for elem in weights:
+            trunc_weights.append(elem[:12])
+            
+        trunc_labels=[]
+        for elem in top_features:
+            trunc_labels.append(elem[:12])
+            
+        plt.figure(figsize=(20,12))
+        sns.heatmap(trunc_weights, annot=trunc_labels, fmt='',cmap='Blues')
+        plt.title(f'LDA sur les transcripts de 1976 à 2015, {chair} \n 30 topics, 100 mots clés')
+        plt.savefig(f'{chair}_30_100.png')
+        plt.show()
+
+
+    
+#%% # GET SPEAKER SCORE PER TOPIC
+
+def speaker_score_per_topic(df,top_features, weights):
+    df.lemmatized = df.lemmatized.astype(str)
+    
+    df_speaker = df.groupby('interlocutor_name').apply(lambda s: ' '.join(s['lemmatized']))
+    
+    
+    l_score = []
+    l_score_f = []
+    for state in df_speaker:
+        for word in state.split():
+            score_state = 0
+            for idx in range(30):
+                if word in top_features[idx]:
+                    idx2 = np.where(word in top_features[idx])
+                    score_state += weights[idx][idx2][0]
+                
+                   # print(score_state)
+                else :
+                    pass
+            l_score.append(score_state)
+        l_score_f.append(score_state)
+    
+    return l_score_f
+# score_state = 0
+# l_score = [] 
+# for word in speaker0.split():
+#     for idx in range(30):
+#         if word in top_features[idx]:
+#             idx2 = np.where(word in top_features[idx])
+#             score_state += weights[idx][idx2][0]
+#            # print(score_state)
+#         else :
+#             pass
+# l_score.append(score_state)
+
+
+# TEST 
+df = df[df.chair_in_charge == 'CHAIRMAN GREENSPAN']
+doc_topic, top_features, weights = LDA_topics(df.statement.dropna().to_list(), len(df), n_components, n_features, n_top_words)
+l_score_f = speaker_score_per_topic(df, top_features, weights)
+
 #%%
 
 plot_topic_ratio(df, doc_topic, top_features)
@@ -162,61 +266,14 @@ plot_topic_per_chair(df, doc_topic, top_features)
         # top_features_ind = topic.argsort()[:-n_top_words - 1:-1]
         # top_features = [feature_names[i] for i in top_features_ind]
         # weights = topic[top_features_ind]
-
-#%%
 # for chair in pd.unique(df.chair_in_charge):
 #     select_topic= plot_topic_per_chair(df, doc_topic, top_features, chair, verbose=True)
 
-
-
-import seaborn as sns
-#show 12 most used words
-trunc_weights = []
-for elem in weights:
-    trunc_weights.append(elem[:12])
-    
-trunc_labels=[]
-for elem in top_features:
-    trunc_labels.append(elem[:12])
-    
-plt.figure(figsize=(20,12))
-sns.heatmap(trunc_weights, annot=trunc_labels, fmt='',cmap='Blues')
-plt.title('LDA sur les transcripts de 1976 à 2015, toutes chairs confondues \n 30 topics, 100 mots clés, corpus de 156 082 mots')
-plt.show()
+#%%
 
 #%%
-## GET INFO PER CHAIR
 
-chairs = pd.unique(df.chair_in_charge)
-for chair in chairs:
-    data= df[df.chair_in_charge==chair].statement.dropna().to_list()
-    doc_topic, top_features, weights = LDA_topics(data, len(data),n_components, n_features, n_top_words)
-    
-    # if saveFlag :
-    #     top_f,w = [],[]
-    #     for features in top_features:
-    #         for words in features :
-    #             top_f.append(words)
-    #     for topic in weights :
-    #         for weight in topic:
-    #             w.append(weight)
-            
-    #     df_topics = pd.DataFrame()
-    #     df_topics['features']=top_f
-    #     df_topics['weights']=w
-    #     df_topics['topic']= np.repeat([i+1 for i in range(n_components)], n_top_words)
-    #     df_topics.to_csv(f'df_{n_components}_{n_top_words}_{chair}.csv')
-        
-    trunc_weights = []
-    for elem in weights:
-        trunc_weights.append(elem[:12])
-        
-    trunc_labels=[]
-    for elem in top_features:
-        trunc_labels.append(elem[:12])
-        
-    plt.figure(figsize=(20,12))
-    sns.heatmap(trunc_weights, annot=trunc_labels, fmt='',cmap='Blues')
-    plt.title(f'LDA sur les transcripts de 1976 à 2015, {chair} \n 30 topics, 100 mots clés')
-    plt.savefig(f'{chair}_30_100.png')
-    plt.show()
+
+#%% 
+
+df = 
