@@ -47,7 +47,7 @@ if run_script:
 
 n_samples = len(df)
 n_features = 3000
-n_components = 30
+n_components = 100
 n_top_words = 100
 ####################################
 

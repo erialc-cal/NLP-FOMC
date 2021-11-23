@@ -41,9 +41,9 @@ def main(topicnum, scale, dirpath):
     
 #%%
 
-vocabulary_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/vocabulary.txt"
-doc_topic_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/topic_mixtures.txt"
-topic_mixture_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/topics.txt"
+vocabulary_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/100 topics/vocabulary.txt"
+doc_topic_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/100 topics/topic_mixtures.txt"
+topic_mixture_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/100 topics/topics.txt"
 
 
 
