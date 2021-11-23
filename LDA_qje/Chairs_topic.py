@@ -22,6 +22,7 @@ import matplotlib.pyplot as plt
 #### PARAMETERS TO BE MODIFIED #####
 saveFlag = True
 run_script = True 
+plotFlag = False
 #if run_script is set to True, import data in the following lines
 if run_script:
     #preprocessing
@@ -52,7 +53,52 @@ n_top_words = 100
 
 #%% ### CORPUS ANALYSIS 
 
+def LDA_model(data, n_sample, n_features, dirpath, saveFlag=saveFlag):
+    assert saveFlag==True
+    data_samples = data[:n_samples]   
+    print("Extracting tf features for LDA...")
+    tf_vectorizer = CountVectorizer(max_df=0.95, min_df=2,
+                                    max_features=n_features,
+                                    stop_words='english')
+    t0 = time()
+    tf = tf_vectorizer.fit_transform(data_samples)
+    print("done in %0.3fs." % (time() - t0))
+    print()
 
+    
+    print('\n' * 2, "Fitting LDA models with tf features, "
+          "n_samples=%d and n_features=%d..."
+          % (n_samples, n_features))
+    lda = LatentDirichletAllocation(n_components=n_components, max_iter=5,
+                                    learning_method='online',
+                                    learning_offset=50.,
+                                    random_state=0)
+    t0 = time()
+    doc_topic = lda.fit_transform(tf)
+   # doc_topic = lda.transform(tf_trans)
+    print("done in %0.3fs." % (time() - t0))
+    topic_word = lda.components_ / lda.components_.sum(axis=1)[:, np.newaxis]
+    vocabulary = tf_vectorizer.get_feature_names()
+
+        ## Topic mixtures.
+    topicmixture_outpath = os.path.join(dirpath, "topic_mixtures.txt")
+    np.savetxt(topicmixture_outpath, doc_topic)
+
+    ## Topics.
+    topic_outpath = os.path.join(dirpath, "topics.txt")
+    np.savetxt(topic_outpath, topic_word)
+
+    ## Vocabulary order.
+    vocab_outpath = os.path.join(dirpath, "vocabulary.txt")
+    with open(vocab_outpath, mode="w") as f:
+        for v in vocabulary:
+            f.write(v + "\n")
+    print("Model saved")
+    return topicmixture_outpath, topic_outpath, vocab_outpath 
+    
+    
+
+    
 def LDA_topics(data, n_samples, n_components, n_features, n_top_words):
         # Use tf (raw term count) features for LDA.
     data_samples = data[:n_samples]   
@@ -111,8 +157,14 @@ def plot_heatmap_corpus(weights, top_features):
 if run_script:
     doc_topic, top_features, weights = LDA_topics(data, n_samples, n_components, n_features, n_top_words)
 
+
 #%%
-if saveFlag :
+dirpath=os.getcwd()
+if saveFlag:
+    doc_topic, top_features, weights = LDA_model(data, len(data), n_features, dirpath, saveFlag=saveFlag)
+
+#%%
+if plotFlag :
     top_f,w = [],[]
     for features in top_features:
         for words in features :
@@ -233,7 +285,7 @@ def speaker_score_per_topic(df,top_features, weights):
                 else :
                     pass
             l_score.append(score_state)
-        l_score_f.append(score_state)
+        l_score_f.append(l_score)
     
     return l_score_f
 # score_state = 0
@@ -250,8 +302,8 @@ def speaker_score_per_topic(df,top_features, weights):
 
 
 # TEST 
-df = df[df.chair_in_charge == 'CHAIRMAN GREENSPAN']
-doc_topic, top_features, weights = LDA_topics(df.statement.dropna().to_list(), len(df), n_components, n_features, n_top_words)
+#df = df[df.chair_in_charge == 'CHAIRMAN GREENSPAN']
+#doc_topic, top_features, weights = LDA_topics(df.statement.dropna().to_list(), len(df), n_components, n_features, n_top_words)
 l_score_f = speaker_score_per_topic(df, top_features, weights)
 
 #%%
@@ -271,9 +323,3 @@ plot_topic_per_chair(df, doc_topic, top_features)
 
 #%%
 
-#%%
-
-
-#%% 
-
-df = 
