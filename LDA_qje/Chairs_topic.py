@@ -94,7 +94,7 @@ def LDA_model(data, n_sample, n_features, dirpath, saveFlag=saveFlag):
         for v in vocabulary:
             f.write(v + "\n")
     print("Model saved")
-    return topicmixture_outpath, topic_outpath, vocab_outpath 
+    return doc_topic, top_features, weights 
     
     
 
@@ -146,7 +146,7 @@ def plot_heatmap_corpus(weights, top_features):
     for elem in top_features:
         trunc_labels.append(elem[:12])
         
-    plt.figure(figsize=(20,12))
+    plt.figure(figsize=(20,22))
     sns.heatmap(trunc_weights, annot=trunc_labels, fmt='',cmap='Blues')
     plt.title('LDA sur les transcripts de 1976 à 2015, toutes chairs confondues \n 30 topics, 100 mots clés, corpus de 156 082 mots')
     plt.show()
@@ -155,7 +155,7 @@ def plot_heatmap_corpus(weights, top_features):
 #%% ######### MODELING AND SAVING DATA
 
 if run_script:
-    doc_topic, top_features, weights = LDA_topics(data, n_samples, n_components, n_features, n_top_words)
+    doc_topic, top_features, weights = LDA_topics(data, len(data), n_components, n_features, n_top_words)
 
 
 #%%
