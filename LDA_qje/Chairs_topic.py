@@ -130,7 +130,7 @@ def LDA_topics(data, n_samples, n_components, n_features, n_top_words):
         top_features_ind = topic.argsort()[:-n_top_words-1:-1]
         top_features.append([tf_feature_names[i] for i in top_features_ind])
         weights.append(topic[top_features_ind])
-    return doc_topic, top_features, weights
+    return doc_topic, top_features, weights, lda
 
 
     
@@ -155,7 +155,7 @@ def plot_heatmap_corpus(weights, top_features):
 #%% ######### MODELING AND SAVING DATA
 
 if run_script:
-    doc_topic, top_features, weights = LDA_topics(data, len(data), n_components, n_features, n_top_words)
+    doc_topic, top_features, weights, lda_model = LDA_topics(data, len(data), n_components, n_features, n_top_words)
 
 
 #%%
@@ -308,8 +308,8 @@ l_score_f = speaker_score_per_topic(df, top_features, weights)
 
 #%%
 
-plot_topic_ratio(df, doc_topic, top_features)
-plot_topic_per_chair(df, doc_topic, top_features)
+#plot_topic_ratio(df, doc_topic, top_features)
+plot_topic_per_chair(df, doc_topic, top_features, chair='CHAIR YELLEN')
 
 # df_per_chair['chair_in_charge']= np.repeat(chair, len(topic))
 # df_per_chair['topic']= np.tile([i for i in range(len(topic))], len(chair))
