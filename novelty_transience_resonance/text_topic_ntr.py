@@ -92,7 +92,7 @@ for i in range(len(topic_word)):
         
 #     return novelties, transiences, resonances
     #%% TESTS
-scale=7
+scale=1000
 
 novelties, transiences, resonances = novelty_transience_resonance(doc_topic, scale)
 
