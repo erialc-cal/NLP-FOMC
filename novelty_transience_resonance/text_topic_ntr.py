@@ -41,9 +41,9 @@ def main(topicnum, scale, dirpath):
     
 #%%
 
-vocabulary_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/30 topics/vocabulary.txt"
-doc_topic_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/30 topics/topic_mixtures.txt"
-topic_mixture_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/30 topics/topics.txt"
+vocabulary_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/100 topics - per interlocutor/vocabulary.txt"
+doc_topic_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/100 topics - per interlocutor/topic_mixtures.txt"
+topic_mixture_path = "/Users/h2jw/Documents/GitHub/NLP-FOMC/novelty_transience_resonance/all data/100 topics - per interlocutor/topics.txt"
 
 
 
@@ -94,7 +94,7 @@ for i in range(len(topic_word)):
     #%% TESTS
 scale=1000
 
-novelties, transiences, resonances = novelty_transience_resonance(doc_topic, scale)
+novelties, transiences, resonances = novelty_transience_resonance(np.array(doc_topic), scale)
 
 #novelties, transiences, resonances = prepare_ntr(df1, two_chairs=False, chair_in_charge=['CHAIR YELLEN'])
 #%%
@@ -115,7 +115,7 @@ ax[2].set_title('transience')
 #%%
 def save_novel_trans_reson(novelties, transiences, resonances, scale, dirpath):
 
-    outpath = os.path.join(dirpath, f"novel_trans_reson_w{scale}.txt")
+    outpath = os.path.join(dirpath, f"novel_trans_reson_w{scale}_agginterloc.txt")
     np.savetxt(outpath, np.vstack(zip(novelties, transiences, resonances)))
     
 save_novel_trans_reson(novelties, transiences, resonances, scale, dirpath)

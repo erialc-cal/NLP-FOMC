@@ -40,7 +40,8 @@ if run_script:
     df.statement = df.statement.astype('string')
     df['statement'] = df['statement'].str.replace('[^\w\s]','')
     #set data
-    data = df.statement.dropna().to_list()
+    df1 = df.groupby(['interlocutor_name', 'Date']).apply(lambda s: ' '.join(s['statement']))
+    data = df1.dropna().to_list()
     
     
 #%%
