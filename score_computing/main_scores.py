@@ -19,7 +19,7 @@ import time
 t1 = time.time()
 
 ### Initial dataset
-file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/scrapping/df_version5.csv'
+file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/update_version_7.csv'
 
 df = pd.read_csv(file_path, low_memory=True)
 print("DATASET IS LOADED")
@@ -52,6 +52,10 @@ df = add_score_academ(df)
 ### Add uncertainty score
 print("Compute virtue and vice score")
 df = add_score_virtue_vice(df)
+
+### Add uncertainty score
+print("Compute complexity score")
+df = add_score_complexity(df)
 #%%
 print("Compute hawkish score")
 df = add_hawkish_score(df)
@@ -62,4 +66,4 @@ print("Total time : ", t2-t1, "seconds")
 
 #%% SAVING DATA
 
-df.to_csv("final_df2015.csv")
+df.to_csv("score_df_7.csv")

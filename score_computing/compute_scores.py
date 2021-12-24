@@ -75,6 +75,7 @@ weak_modal = [x.lower() for x in df1[df1.Weak_Modal > 0].Word.tolist()]
 strong_modal = [x.lower() for x in df1[df1.Strong_Modal > 0].Word.tolist()]
 
 incertitude = [x.lower() for x in df1[df1.Uncertainty > 0].Word.tolist()]
+complexity = [x.lower()for x in df1[df1.Complexity > 0].Word.tolist()]
 
 ### HARVARD DICTIONARY
 academic =  [x.lower() for x in df2[df2.Academ != 0].Entry.tolist()]
