@@ -30,9 +30,9 @@ import datetime as dt
 ######################### PARTIE A MODIFIER PAR L'UTILISATEUR #########################
 
 
-scrapping_start_year = 2015
-skip_scrapping = True #set to True if you already scrapped the data in the folder
-skip_wordset = True #set to True if you want to skip cleaning the data into wordset
+scrapping_start_year = 2014
+skip_scrapping = False #set to True if you already scrapped the data in the folder
+skip_wordset = False #set to True if you want to skip cleaning the data into wordset
 
 
 #######################################################################################
@@ -71,7 +71,7 @@ print('----CLEANING IN PROGRESS AND CREATING DATASET--------------')
 main_dataframe_constructor2(date_list)
 
 
-print('DATASET hAS BEEN CREATED.')
+print('DATASET hAS BEEN CREATED. AT NAME df_statement_real')
 
 
 

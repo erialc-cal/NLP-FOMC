@@ -11,7 +11,7 @@ To be used jointly with scrapping_transcript.py
 
 import numpy as np
 import pandas as pd
-from urllib import request
+from urllib.request import Request, urlopen
 import bs4
 import itertools
 
@@ -25,8 +25,9 @@ def get_year_list():
 
     """
     url = 'https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm'
-   
-    request_text = request.urlopen(url).read()
+	# updated pour contourner les mod_security ajoutés sur le site
+    req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    request_text = urlopen(req).read()
     page = bs4.BeautifulSoup(request_text, "lxml")
     links,year = [],[]
     for link in page.find_all('a'):
@@ -106,7 +107,8 @@ def get_date_list(year):
     for year_date in year:
         url =  'https://www.federalreserve.gov/monetarypolicy/fomchistorical'+year_date+'.htm'
         # Dates appear in the 5th header from https://www.federalreserve.gov/monetarypolicy/fomchistorical{year}.htm
-        request_text = request.urlopen(url).read()
+        req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        request_text = urlopen(req).read()
         page = bs4.BeautifulSoup(request_text, "lxml")
         titles = []
         for title in page.find_all('h5'):

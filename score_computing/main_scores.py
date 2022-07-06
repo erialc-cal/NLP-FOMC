@@ -10,6 +10,7 @@ Main script to compute all scores and add them to the dataset
 """
 ### PACKAGES 
 import os
+project_directory = os.path.dirname(__file__)
 dir_name = os.path.dirname(os.path.abspath(__file__)) # os.path.dirname(__file__)
 os.chdir(dir_name)
 from compute_scores import *
@@ -19,7 +20,7 @@ import time
 t1 = time.time()
 
 ### Initial dataset
-file_path ='/Users/h2jw/Documents/GitHub/NLP-FOMC/update_version_7.csv'
+file_path =project_directory+'/scrapped_cleaned.csv'
 
 df = pd.read_csv(file_path, low_memory=True)
 print("DATASET IS LOADED")
