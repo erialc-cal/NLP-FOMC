@@ -61,7 +61,7 @@ df = add_score_complexity(df)
 print("Compute hawkish score")
 df = add_hawkish_score(df)
 
-#t2 = time.time()
+t2 = time.time()
 
 print("Total time : ", t2-t1, "seconds")
 

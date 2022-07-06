@@ -429,6 +429,44 @@ def add_score_virtue_vice(df):
     return df 
 
 
+#%% COMPLEXITY
+
+
+def compute_complexity(statement):
+    """
+        This function computes the complexity score of each statement
+
+    Parameters
+    ----------
+    statement : str, statement 
+    Returns
+    -------
+    score
+    """
+    aca_score = 0
+    nb_words = len(statement.split())
+    for word in statement.lower().split():
+        #print(word)
+        if word in complexity :
+            aca_score += 1
+        else:
+            pass
+    score = aca_score/nb_words
+    return score
+
+#score_acadam,score_hostile,score_econo,score_virtue,score_vice,score_hawkish,score_posi,score_affi,score_uncert,Affil,Hostile,Strong,Power,Weak,Submit,Active,Passive,Ovrst,Undrst,Quan,ORD,CARD,NUMB,Yes,No,Negate,SureLw,If,NotLw,RspGain,ABS,Causal
+
+def add_score_complexity(df):
+    """
+    Adds academic score to the dataset 
+    
+    """
+    score = []
+    for statement in df.statement : 
+        clean_statement = remove_stop_word_per_statement(statement)
+        score.append(compute_complexity(clean_statement))
+    df['score_complexity']= score
+    return df 
 
 
 
