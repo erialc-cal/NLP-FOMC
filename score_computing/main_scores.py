@@ -68,3 +68,5 @@ print("Total time : ", t2-t1, "seconds")
 #%% SAVING DATA
 
 df.to_csv("score_df_7.csv")
+
+## Test 6/07/22 : 1446.08243393898 seconds

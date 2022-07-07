@@ -529,7 +529,7 @@ def main_dataframe_constructor2(l_dates):
 
     #want to save in the directory to add scores
 
-    path_to_save = os.path.dirname(os.path.abspath(project_directory) + "score_computing/scrapped_cleaned.csv"
+    path_to_save = os.path.dirname(os.path.abspath(project_directory)) + "/score_computing/scrapped_cleaned.csv"
     df_statement_size.set_index("Date").to_csv(path_to_save)
     
     
