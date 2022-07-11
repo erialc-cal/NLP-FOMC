@@ -64,31 +64,33 @@ def month_string_to_number(string):
 def convert_to_date(date_string):
     date_num = []
     for string in date_string :
-        
-        if len(string.split())==5 : # format is Month XX-YY Meeting - Year            
-            mon, day, _, _, year = string.split()
-        
-        elif len(string.split())> 5 : # format is Month1 XX-Month2 YY Meeting - Year
-            mon = string.split()[1].split('-')[1] 
-            _, _, day, _,_,year = string.split()
-        
-        month_string = month_string_to_number(mon)
+        try: 
+            if len(string.split())==5 : # format is Month XX-YY Meeting - Year            
+                mon, day, _, _, year = string.split()
+            
+            elif len(string.split())> 5 : # format is Month1 XX-Month2 YY Meeting - Year
+                mon = string.split()[1].split('-')[1] 
+                _, _, day, _,_,year = string.split()
+            
+            month_string = month_string_to_number(mon)
         
         # print(day, month_string, year)
         
-        if len(day) > 2 : # day format is either "XX-YY" or "X-Y"
-            _, nday = day.split("-") # the second day (YY or Y) matches the date
-            if len(nday)==1: # if Y, add 0 to string to get 0Y
-                date = year+month_string+"0"+nday 
-            else :  
-                date = year+month_string+nday 
-        elif len(day)==1: 
-            date = year+month_string+"0"+day
-        else : 
-            date = year+month_string+day
-        # ex: January 27-28 2015 -> 20150128
+            if len(day) > 2 : # day format is either "XX-YY" or "X-Y"
+                _, nday = day.split("-") # the second day (YY or Y) matches the date
+                if len(nday)==1: # if Y, add 0 to string to get 0Y
+                    date = year+month_string+"0"+nday 
+                else :  
+                    date = year+month_string+nday 
+            elif len(day)==1: 
+                date = year+month_string+"0"+day
+            else : 
+                date = year+month_string+day
+            # ex: January 27-28 2015 -> 20150128
+            date_num.append(date)
+        except:
+            pass
         
-        date_num.append(date)
     return date_num
 
 def get_date_list(year):

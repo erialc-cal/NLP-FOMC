@@ -55,7 +55,7 @@ def RemoveBadCarac(mot):
     """
     bad_carac = [",", "*", "'", "]", "[", "-", " ", 
                  '', "(", ")", "//", '-', '\\n', 
-                 'Š','Œ','™','ﬁ','ﬂ','í' ]
+                 'Š','Œ','™','ﬁ','ﬂ','í' , '\n', "™"]
     mot_propre = list()
     for carac in mot:
         if carac not in bad_carac: #and not carac.isnumeric():
@@ -312,8 +312,9 @@ def plot_speak(liste, date):
 
 #%% TESTS
 
-date = '20140730'
+date = '19760921'
 file1 = open(project_directory+'/transcript_files_txt/'+str(date)+'meeting.txt', 'r')
+
 def clean_text_before_search(file1):
     lines = file1.readlines()
     lines_cleaned=""
@@ -371,7 +372,7 @@ def check_broken_words(cleaned_lines):
 
 #TEST
 
-# lines_c = clean_text_before_search(file1)
+#lines_c = clean_text_before_search(file1)
 
 
 # c = check_broken_words(lines_c)
@@ -417,7 +418,7 @@ def main_dataframe_constructor(l_dates):
             new_string = " ".join(content)
             liste_word = new_string.split(" ")
     
-            bad_carac = [",", "*", "'", "]", "[", "-", " ", '', "(", ")", "//", ".", '-', '$', '€', "/", ";", "Š", "™", "."]
+            bad_carac = ["\n", ",", "*", "'", "]", "[", "-", " ", '', "(", ")", "//", ".", '-', '$', '€', "/", ";", "Š", "™", "."]
     
             good_liste = list()
     
@@ -481,9 +482,11 @@ def main_dataframe_constructor(l_dates):
 
 # for date in date_to_append:
 #     l_dates_final.append(date)
+
+
 def main_dataframe_constructor2(l_dates):
     """
-    Crreates updated dataframe with transcript statement, statement size, statement size, chair in charge and interlocutor's name
+    Creates updated dataframe with transcript statement, statement size, statement size, chair in charge and interlocutor's name
 
     Parameters
     ----------

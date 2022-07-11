@@ -30,9 +30,9 @@ import datetime as dt
 ######################### PARTIE A MODIFIER PAR L'UTILISATEUR #########################
 
 
-scrapping_start_year = 2014
+scrapping_start_year = 1936 # earliest available transcript is dated 1936, earliest scrappable transcript is dated 1976
 skip_scrapping = False #set to True if you already scrapped the data in the folder
-skip_wordset = False #set to True if you want to skip cleaning the data into wordset
+skip_wordset = True #set to True if you want to skip cleaning the data into wordset
 
 
 #######################################################################################
@@ -43,7 +43,8 @@ year_l = [str(i) for i in range(scrapping_start_year, dt.datetime.now().year-5)]
 # actualise la liste d'années à partir de scrapping start year
 
 date_list = get_date_list(year_l)
-
+#fake date list to check except of cleaning
+#fake_date_list= ['20140129', '20200203']
 
 if not skip_scrapping:
     ### SCRAPPING
@@ -56,22 +57,24 @@ if not skip_scrapping:
     date_list = scrapping_transcript(date_list) # update to successful scrapped dates
 
 if not skip_wordset:
-    ### CLEANING
-    print('----CLEANING IN PROGRESS--------------')
+    ### CLEANING AND CONVERTING TO WORD SET
+    print('----CLEANING AND CONVERTING INTO WORD SET IN PROGRESS--------------')
     try :
         os.mkdir(dir_name+'/transcript_to_word_set/')
     except: 
         pass
-    convert_transcript_wordset(date_list) # creates wordset
-
+    try :
+        convert_transcript_wordset(date_list) # creates wordset on the cleaned dataset
+    except:
+        print('----CLEANING FAILED, CREATING DATASET FROM SCRAPPING----')
 
 #%%
-### CREATING DATASET
+### CREATING DATASET AFTER CLEANING AND SCRAPPING
 print('----CLEANING IN PROGRESS AND CREATING DATASET--------------')
 main_dataframe_constructor2(date_list)
 
 
-print('DATASET hAS BEEN CREATED. AT NAME df_statement_real')
+print('DATASET HAS BEEN CREATED. AT NAME scrapped_cleaned.csv')
 
 
 
